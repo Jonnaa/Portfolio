@@ -17,7 +17,7 @@ section {
 #home{
     
     background-color: aquamarine;
-    display: none;
+    display: block;
     min-height: 100vh;
 }
 
@@ -29,16 +29,21 @@ section {
     justify-content: center;
 }
 
-#aboutMe{
-    display:block;
+#about{
     background-color: brown;
     min-height: 100vh;
 }
 
-#aboutMe > img{
-    height: 300px;
+#about > img{
+    height: 200px;
 }
-#aboutMe > footer{
+footer{
+    width: 100%;
+    background-color: black;
     position: absolute;
     bottom: 0;
+}
+footer > a{
+    text-decoration: none;
+    color: white;
 }
