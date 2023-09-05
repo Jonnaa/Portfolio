@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: rgb(90, 0, 126);
+}
+
+section {
+    flex-grow: 1;
+    display:none;
+}
+
+#home{
+    
+    background-color: aquamarine;
+    display: none;
+    min-height: 100vh;
+}
+
+#home >h1{
+    font-size: 80px;
+    color: rgb(18, 36, 197);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutMe{
+    display:block;
+    background-color: brown;
+    min-height: 100vh;
+}
+
+#aboutMe > img{
+    height: 300px;
+}
+#aboutMe > footer{
+    position: absolute;
+    bottom: 0;
+}
