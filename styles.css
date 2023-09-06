@@ -1,24 +1,37 @@
+:root{
+    --primary-color:rgb(245, 192, 255);
+    --secondary-color: rgb(153, 153, 153);
+    --button-hover-color:rgb(92, 0, 177);
+}
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
 html{
-    background-color: rgb(237, 192, 255);
-    min-height: 100vh;
+    
 }
 body{
+    background-color: var(--primary-color);
+    min-height: 100vh;
     display: grid;
     grid-template-rows: .3fr 7fr;
 }
 /* ---------------------------- */
 /*            Header            */
 /* ---------------------------- */
- .navButtons{
-    margin:0;
-}
+
 header{
-    background-color: blueviolet;
+    background-color: var(--secondary-color);
+    top: 0;
+}
+.navButton{
+    margin:0;
+    background-color: black;
+    color:white;
+}
+.navButton:hover{
+    background-color:var(--button-hover-color);
 }
 
 /* ---------------------------- */
@@ -32,7 +45,7 @@ section {
 /* --------------- */
 #home{
     min-height: 100vh;
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     display: block;
 }
 #landingName{
@@ -50,39 +63,73 @@ section {
 /*    About Page   */
 /* --------------- */
 #about{
-    background-color: brown;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    margin-bottom: 14px;
+    padding: 0;
 }
 
 #about > img{
     display: block;
     height: 200px;
-    margin: 0 auto;
+    margin: 60px auto;
+    border: solid rgb(104, 104, 104) 5px;
+    border-radius: 50%;
+}
+
+main>p{
+    font-size: 20px;
+    border-radius: 20px;
+    padding:15px;
+    background-color: rgba(149, 149, 149, 0.838);
 }
 
 /* --------------- */
 /*   Resume Page   */
 /* --------------- */
+#resume{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
 #resume > img{
     display: block;
-    height: 200px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
+
+
 /* --------------- */
 /*  Projects Page  */
 /* --------------- */
+#projects{
+    min-height: 100vh;
+}
 
+#projects>img{
+    height: 200px;
+}
 /* ---------------------------- */
 /*            Footer            */
 /* ---------------------------- */
 footer{
     height: 45px;
     min-width: 100vw;
-    background-color: black;
-    position: absolute;
+    background-color: var(--secondary-color);
+    position: fixed;
     bottom: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 footer > a{
     text-decoration: none;
     color: white;
     text-align: center;
+}
+a>img{
+    display: block;
+    height: 40px;
+    margin: 3px auto;
+}
+
+a>img:hover{
+    background-color: var(--button-hover-color);
 }
