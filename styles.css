@@ -81,7 +81,7 @@ main>p{
     font-size: 20px;
     border-radius: 20px;
     padding:15px;
-    background-color: rgba(149, 149, 149, 0.838);
+    background-color: rgba(215, 215, 215, 0.498);
 }
 
 /* --------------- */
@@ -102,11 +102,22 @@ main>p{
 /* --------------- */
 #projects{
     min-height: 100vh;
+    padding-top: 20px;
+}
+.images{
+    height: 200px;
+    display: none;
+}
+.images:first-of-type{
+    display: block;
+}
+.carouselButtons{
+    margin: 10px auto;
+}
+.carouselButtons>button{
+    width: 80px;
 }
 
-#projects>img{
-    height: 200px;
-}
 /* ---------------------------- */
 /*            Footer            */
 /* ---------------------------- */

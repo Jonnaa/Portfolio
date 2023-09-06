@@ -1,3 +1,7 @@
+/* --------------------------- */
+/*     Single Page JS Code     */
+/* --------------------------- */
+
 /* Saving section elements(pages) to pages variable*/
 const pages = document.querySelectorAll('section')
 
@@ -21,3 +25,57 @@ for (let i = 0; i < pages.length; i++) {
         }
     })
 }
+
+/* --------------------------- */
+/*        Carousel Code        */
+/* --------------------------- */
+
+//global variables that keep track of current and previous image
+let previousImg = 0;
+let currentImg = 0;
+
+//Saving next and prev button to variables
+const nextB = document.getElementById("nextButton");
+const prevB = document.getElementById("prevButton");
+
+//Saving images to a var
+const images = document.querySelectorAll(".images");
+
+//Function for next button
+nextB.addEventListener("click",()=>{
+    previousImg = currentImg;
+    currentImg++;
+
+    images[previousImg].style.display="none";
+    if(currentImg>=images.length){
+        currentImg=0;
+    }
+    images[currentImg].style.display="block";
+})
+
+//Function for previous button
+prevB.addEventListener("click",()=>{
+    
+    previousImg=currentImg;
+    currentImg--;
+    
+    images[previousImg].style.display="none";
+
+    if(currentImg<0){
+        currentImg=images.length-1;
+    }
+    images[currentImg].style.display="block";
+})
+
+/* --------------------------- */
+/*          Modal Code         */
+/* --------------------------- */
+
+// Setting spaceship image to a var
+const spaceImg = document.getElementById("spaceBattle")
+
+// Adding event listener to the picture
+
+spaceImg.addEventListener("click",()=>{
+    console.log("You clicked space battle");
+})
