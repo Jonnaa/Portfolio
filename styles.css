@@ -5,20 +5,45 @@
 }
 
 body{
+    position: relative;
     min-height: 100vh;
-    background-color: rgb(90, 0, 126);
+    background-color: rgb(237, 192, 255);
+    display: grid;
+    grid-template-rows: .3fr 9fr;
+}
+/* ---------------------------- */
+/*            Header            */
+/* ---------------------------- */
+nav{
+    display: flex;
+    justify-content:space-between;
+}
+.left-button{
+    margin-left: 20px;
+    display: flex;
+    flex:1;
+}
+.right-buttons{
+    display: flex;
+    flex:1;
+    justify-content: flex-end;
+}
+.navButton{
+    margin-right:20px;
 }
 
+/* ---------------------------- */
+/*            Pages             */
+/* ---------------------------- */
 section {
-    flex-grow: 1;
     display:none;
 }
-
+/* --------------- */
+/*    Home Page    */
+/* --------------- */
 #home{
-    
     background-color: aquamarine;
     display: block;
-    min-height: 100vh;
 }
 
 #home >h1{
@@ -29,16 +54,36 @@ section {
     justify-content: center;
 }
 
+/* --------------- */
+/*    About Page   */
+/* --------------- */
 #about{
     background-color: brown;
-    min-height: 100vh;
 }
 
 #about > img{
+    display: block;
     height: 200px;
+    margin: 0 auto;
 }
+
+/* --------------- */
+/*   Resume Page   */
+/* --------------- */
+#resume > img{
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+}
+/* --------------- */
+/*  Projects Page  */
+/* --------------- */
+
+/* ---------------------------- */
+/*            Footer            */
+/* ---------------------------- */
 footer{
-    width: 100%;
+    width: 100vw;
     background-color: black;
     position: absolute;
     bottom: 0;
