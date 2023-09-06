@@ -72,10 +72,27 @@ prevB.addEventListener("click",()=>{
 /* --------------------------- */
 
 // Setting spaceship image to a var
-const spaceImg = document.getElementById("spaceBattle")
+const spaceImg = document.getElementById("spaceBattle");
+
+// Setting modal div to a var
+const modalDiv = document.getElementById("modalDiv");
+
+// Setting modal div close button to a var
+const modalClose = document.getElementById("closeModal");
 
 // Adding event listener to the picture
-
 spaceImg.addEventListener("click",()=>{
     console.log("You clicked space battle");
+    modalDiv.style.display="block";
 })
+
+modalClose.addEventListener('click',()=>{
+    console.log("closing modal");
+    modalDiv.style.display="none";
+})
+
+/////////////////////
+//   Inside Modal  //
+/////////////////////
+
+const insideModal = document.querySelector(".insideModal");

@@ -53,6 +53,7 @@
 
         <!-- Projects Page -->
         <section id="projects">
+            <!-- Projects Carousel -->
             <img src="images/USS_Enterprise.jpg" alt="uss enterprise" class="images" id="spaceBattle">
             <img src="images/mechanic-working-on-engine.jpg" alt="mechanic working on engine" class="images">
             <img src="images/JavaScript-logo.png" alt="javascript logo" class="images">
@@ -60,12 +61,24 @@
                 <button id="prevButton">Previous</button>
                 <button id="nextButton">Next</button>
             </div>
-            <!-- Projects Carousel -->
-                <!-- One Project is clicked for a modal -->
+
+            <!-- Modal -->
+            <div id="modalDiv">
+                <div class="insideModal">
+                    <button id="playGame">Play Game</button>
+                    <div id="gameBoard"></div>
+                    <footer>
+                        <button id="closeModal">Close</button>
+                    </footer>
+                    
+                </div>
+            </div>
+
         </section>
 
-
     </main> 
+
+    <!-- Footer(Links) -->
     <footer class="row justify-content-center m-0">
         <a class="col-3" href="https://github.com/Jonnaa"><img src="images/GitHub-logo.png" alt="github logo"></a>
 
