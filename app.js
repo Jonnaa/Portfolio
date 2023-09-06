@@ -95,4 +95,18 @@ modalClose.addEventListener('click',()=>{
 //   Inside Modal  //
 /////////////////////
 
-const insideModal = document.querySelector(".insideModal");
+const playGame = document.getElementById("playGame");
+
+const gameBoard = document.getElementById("gameBoard");
+
+playGame.addEventListener('click',()=>{
+    let newP = document.createElement("p");
+    newP.innerText="DO NOT PLAY THIS GAME";
+    gameBoard.append(newP);
+})
+
+const resetBoard = document.getElementById("resetBoard");
+
+resetBoard.addEventListener('click', ()=>{
+    gameBoard.innerHTML="";
+})
