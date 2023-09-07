@@ -184,8 +184,22 @@ a>img:hover{
     background-color: var(--button-hover-color);
     transition: background-color 1s;
 }
-
-
+#gitHub:hover{
+    #darkGit{
+        display: none;
+    }
+    #lightGit{
+        border-radius: 50%;
+    }
+}
+#linkedIn:hover{
+    #darkLinked{
+        display: none;
+    }
+    #lightLinked{
+        border-radius: 5%;
+    }
+}
 /* ------------------------------------------------- */
 /*                 Media Queries                     */
 /* ------------------------------------------------- */
