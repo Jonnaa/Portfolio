@@ -25,10 +25,11 @@ header{
     top: 0;
 }
 .navButton{
-    margin:0;
     background-color: black;
     color:white;
     border-radius: 3px;
+    font-size: 22px;
+    padding: 7px 2px;
 }
 .navButton:hover{
     background-color:var(--button-hover-color);
@@ -164,13 +165,11 @@ main>p{
 /*            Footer            */
 /* ---------------------------- */
 body>footer{
-    height: 45px;
+    height: 51px;
     min-width: 100vw;
     background-color: var(--secondary-color);
     position: fixed;
     bottom: 0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 }
 footer > a{
     text-decoration: none;
@@ -179,30 +178,40 @@ footer > a{
 }
 a>img{
     display: block;
-    height: 40px;
-    margin: 3px auto;
+    height: 49px;
+    margin: 2px auto;
 }
 
 a>img:hover{
     background-color: var(--button-hover-color);
     transition: background-color 1s;
 }
+#lightGit{
+    display: none;
+}
 #gitHub:hover{
     #darkGit{
         display: none;
     }
     #lightGit{
+        display: block;
         border-radius: 50%;
     }
+}
+#lightLinked{
+    display: none;
 }
 #linkedIn:hover{
     #darkLinked{
         display: none;
     }
     #lightLinked{
+        display: block;
         border-radius: 5%;
     }
 }
+
+
 /* ------------------------------------------------- */
 /*                 Media Queries                     */
 /* ------------------------------------------------- */
@@ -243,6 +252,7 @@ a>img:hover{
         margin:100px auto 20px;
     }
 }
+
 @media (min-width: 400px) {
     section > h1 {
         font-size: 5rem;
@@ -261,6 +271,7 @@ a>img:hover{
         margin:100px auto 20px;
     }
 }
+
 @media (min-width: 600px) {
     section > h1 {
         font-size: 7rem;
@@ -278,6 +289,7 @@ a>img:hover{
         margin:100px auto 20px;
     }
 }
+
 @media (min-width: 800px) {
     section > h1 {
         font-size: 8rem;
@@ -296,6 +308,7 @@ a>img:hover{
         margin:100px auto 20px;
     }
 }
+
 @media (min-width: 1000px) {
     section > h1 {
         font-size: 7rem;
