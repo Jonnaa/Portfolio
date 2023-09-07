@@ -98,15 +98,19 @@ modalClose.addEventListener('click',()=>{
 const playGame = document.getElementById("playGame");
 
 const gameBoard = document.getElementById("gameBoard");
-
+const gameText = document.getElementById("gameText");
+let counter = 0;
 playGame.addEventListener('click',()=>{
     let newP = document.createElement("p");
-    newP.innerText="DO NOT PLAY THIS GAME";
-    gameBoard.append(newP);
+    newP.innerText=`DO NOT PLAY THIS GAME ${counter}`;
+    gameText.appendChild(newP);
+    gameBoard.scrollIntoView({ block: "end" });
+    counter++;
 })
 
 const resetBoard = document.getElementById("resetBoard");
 
 resetBoard.addEventListener('click', ()=>{
-    gameBoard.innerHTML="";
+    gameText.innerHTML="";
+    counter=0;
 })

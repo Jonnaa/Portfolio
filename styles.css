@@ -30,6 +30,7 @@ header{
 }
 .navButton:hover{
     background-color:var(--button-hover-color);
+    transition: background-color 1s;
 }
 
 /* ---------------------------- */
@@ -53,7 +54,7 @@ section >h1{
     text-align: center;
     margin: 400px auto;
     font-size: 8rem;
-    color: rgb(18, 36, 197);
+    color: rgb(45, 1, 42);
 }
 
 /* --------------- */
@@ -105,7 +106,7 @@ main>p{
     padding-top: 20px;
 }
 .images{
-    height: 200px;
+    height: 400px;
     display: none;
     margin:0 auto;
 }
@@ -117,7 +118,14 @@ main>p{
     margin: 10px auto;
 }
 .carouselButtons>button{
+    border-radius: 8px;
     width: 80px;
+}
+.carouselButtons>button:hover{
+    background-color: var(--button-hover-color);
+    color: white;
+    box-shadow: -1px 2px 8px rgb(27, 1, 56);
+    transition: background-color 1s, color 1s, box-shadow 1s;
 }
 #spaceBattle:hover{
     cursor: pointer;
@@ -174,6 +182,7 @@ a>img{
 
 a>img:hover{
     background-color: var(--button-hover-color);
+    transition: background-color 1s;
 }
 
 
@@ -184,16 +193,22 @@ a>img:hover{
 @media (min-width: 200px) {
     section>h1{
         font-size: 3rem;
+        margin: 150px auto 0;
     }
     .insideModal{
         height:350px;
         width: 240px;
+    }
+    .images{
+        height: 150px;
+        margin:100px auto 20px;
     }
 }
 
 @media (min-width: 300px) {
     section > h1 {
         font-size: 4rem;
+        margin: 170px auto 0;
     }
     .insideModal{
         height:350px;
@@ -206,10 +221,15 @@ a>img:hover{
     main>p{
         font-size: 14px;
     }
+    .images{
+        height: 180px;
+        margin:100px auto 20px;
+    }
 }
 @media (min-width: 400px) {
     section > h1 {
         font-size: 5rem;
+        margin: 200px auto 0;
     }
     main>p{
         font-size: 15px;
@@ -218,10 +238,16 @@ a>img:hover{
         height: 200px;
         margin:40px auto;
     }
+    
+    .images{
+        height: 220px;
+        margin:100px auto 20px;
+    }
 }
 @media (min-width: 600px) {
     section > h1 {
         font-size: 7rem;
+        margin: 250px auto 0;
     }
     main>p{
         font-size: 19px;
@@ -230,10 +256,15 @@ a>img:hover{
         height: 250px;
         margin:50px auto;
     }
+    .images{
+        height: 300px;
+        margin:100px auto 20px;
+    }
 }
 @media (min-width: 800px) {
     section > h1 {
         font-size: 8rem;
+        margin: 300px auto 0;
     }
     .insideModal{
         height:500px;
@@ -243,9 +274,18 @@ a>img:hover{
         height: 300px;
         margin:55px auto;
     }
+    .images{
+        height: 350px;
+        margin:100px auto 20px;
+    }
 }
 @media (min-width: 1000px) {
     section > h1 {
         font-size: 8rem;
+        margin: 400px auto 0;
+    }
+    .images{
+        height: 400px;
+        margin:100px auto 20px;
     }
 }
