@@ -3,7 +3,6 @@
 /* ------------------------------------------------- */
 :root{
     --primary-color:rgb(245, 192, 255);
-    /* --secondary-color: rgb(153, 153, 153); */
     --secondary-color: rgb(123, 123, 123);
     --button-hover-color:rgb(92, 0, 177);
 }
@@ -119,7 +118,7 @@ main>p{
     display: none;
     margin:0 auto;
 }
-div>.images:first-of-type{
+#spaceBattle{
     display: block;
 }
 .carouselButtons{
@@ -163,12 +162,17 @@ div>.images:first-of-type{
     overflow: auto;
     border-radius: 10px;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.498);
+    text-align: center;
 }
-
 #gameBoard{
     margin-top: 10px;
 }
 
+/* Car Manual Modal */
+
+#manualProjDesc{
+    display: none;
+}
 
 /* ------------------------------------------------- */
 /*                        Footer                     */
