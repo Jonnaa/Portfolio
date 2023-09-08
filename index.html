@@ -54,46 +54,47 @@
     <!-- Projects Page -->
         <section id="projects">
         <!-- Projects Carousel -->
-            <!-- Space Battle Project -->
+
             <img src="images/USS_Enterprise.jpg" alt="uss enterprise" title="Space Battle" class="images" id="spaceBattle">
             <img src="images/mechanic-working-on-engine.jpg" alt="mechanic working on engine" title="Car Manuals" class="images" id="manualProjImage">
-            <img src="images/JavaScript-logo.png" alt="javascript logo" title="JS Project" class="images">
-
-            <div id="ussDiv">
-                
-            </div>
-            
-            <!-- Car Manual Project -->
-            
-            <div id="manualProjDesc">
-                <h4>Car Manual Library</h4>
-                <p>Not a current project, but just an idea. Plan is to have a responsive site that populates the searches as you are searching in real time. I'd like to have full car manuals and not just random snippets of manuals. I'd like the search to also allow people to look for a specific task and then the search provides an instructional video on how to do said task.</p>
-            </div>
-
-            <div id="jsProject">
-                
-            </div>
+            <img src="images/JavaScript-logo.png" alt="javascript logo" title="JS Project" class="images" id="jsProjImage">
 
             <div class="carouselButtons">
                 <button id="prevButton">Previous</button>
                 <button id="nextButton">Next</button>
             </div>
 
-            <!-- Modal -->
+            <!-- Modals -->
             <div id="modalDiv">
                 <div class="insideModal">
-                    <h3>Space Battle</h3>
+
+                    <!-- Space Battle Moda -->
                     <div id="gameBoard">
+                        <h3>Space Battle</h3>
                         <div id="gameText">
                             <p>Welcome, Captain!</br>You must fight 6 alien ships to win!</p>
                         </div>
                         <div id="modalButtons">
                             <button id="playGame">Play Game</button>
                             <button id="resetBoard">Reset Board</button>
-                            <button id="closeModal">Close</button> 
+                            <!-- <button id="closeModal">Close</button>  -->
                         </div> 
                     </div>
-                    
+
+                    <!-- Car Manual Modal -->
+                    <div id="manualProjDesc">
+                        <h3>Car Manual Library</h3>
+                        <p>Not a current project, but just an idea. Plan is to have a responsive site that populates the searches as you are searching in real time. I'd like to have full car manuals and not just random snippets of manuals. I'd like the search to also allow people to look for a specific task and then the search provides an instructional video on how to do said task.</p>
+                        <!-- <button id="closeManualProj">Close</button>  -->
+                    </div>
+
+                    <!-- Random JS Proj Modal -->
+                    <div id="jsProjDesc">
+                        <h3>Random JS Project</h3>
+                        <p>This isn't a real project. It's just an excuse to add another image to the carousel and to show off another modal. Maybe it'll be something someday, but today is not that day.</p>
+                        <!-- <button id="jsProjClose">Close</button> -->
+                    </div>
+                    <button id="closeModal">Close</button> 
                 </div>
             </div>
 

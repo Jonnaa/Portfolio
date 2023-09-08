@@ -168,10 +168,23 @@ main>p{
     margin-top: 10px;
 }
 
-/* Car Manual Modal */
+/* Car Manual Proj Modal */
 
 #manualProjDesc{
     display: none;
+}
+#manualProjDesc > p{
+    text-align: left;
+    margin: 5px 10px 10px;
+}
+
+/* Random JS Proj Modal */
+#jsProjDesc{
+    display: none;
+}
+#jsProjDesc > p{
+    text-align: left;
+    margin: 5px 10px 10px;
 }
 
 /* ------------------------------------------------- */

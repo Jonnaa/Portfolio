@@ -71,29 +71,37 @@ prevB.addEventListener("click",()=>{
 /*          Modal Code         */
 /* --------------------------- */
 
-// Setting spaceship image to a var
-const spaceImg = document.getElementById("spaceBattle");
-
 // Setting modal div to a var
 const modalDiv = document.getElementById("modalDiv");
 
 // Setting modal div close button to a var
 const modalClose = document.getElementById("closeModal");
 
+// Setting inside of modal div to a var
+const insideModal = document.getElementById("insideModal");
+
+////////////////////////////////////
+//          Inside Modal          //
+////////////////////////////////////
+
+/* --------------- */
+/*   Space Battle  */
+/*  -------------  */
+
+// Setting spaceship image to a var
+const spaceImg = document.getElementById("spaceBattle");
+
 // Adding event listener to the picture
 spaceImg.addEventListener("click",()=>{
-    console.log("You clicked space battle");
+    manualProjDesc.style.display="none";
+    jsProjDesc.style.display="none";
     modalDiv.style.display="block";
+    gameBoard.style.display="block";
 })
 
 modalClose.addEventListener('click',()=>{
-    console.log("closing modal");
     modalDiv.style.display="none";
 })
-
-/////////////////////
-//   Inside Modal  //
-/////////////////////
 
 const initialDesc = document.getElementById("gameText").innerHTML;
 
@@ -102,28 +110,12 @@ const playGame = document.getElementById("playGame");
 const gameBoard = document.getElementById("gameBoard");
 const gameText = document.getElementById("gameText");
 let counter = 0;
-let shipName;
 playGame.addEventListener('click',()=>{
-    // let askForName = document.createElement("h3");
-    // let nameInput = document.createElement("input");
-    // if(counter===0){
-    //     askForName.setAttribute('id','askForName')
-    //     askForName.innerText="Name your ship!";
-    //     gameText.appendChild(askForName);
-    //     nameInput.setAttribute('id','nameInput')
-    //     gameText.appendChild(nameInput);
-    //     shipName = document.getElementById('nameInput').value;
-    //     console.log(shipName);
-    // }
-    // if(counter===1){
-    //     let a = document.getElementById("askForName");
-    //     let b = document.getElementById("nameInput");
-    //     a.remove();
-    //     b.remove();
-    // }
     let newP = document.createElement("p");
     newP.innerText=`DO NOT PLAY THIS GAME ${counter}`;
     gameText.appendChild(newP);
+    console.log(gameBoard);
+    console.log(insideModal);
     gameBoard.scrollIntoView({ block: "end" });
     counter++;
 })
@@ -134,3 +126,54 @@ resetBoard.addEventListener('click', ()=>{
     gameText.innerHTML=initialDesc;
     counter=0;
 })
+
+/* --------------- */
+/*   Car Manuals   */
+/*  -------------  */
+
+// Set car manual project desc to a var
+const manualProjDesc = document.getElementById('manualProjDesc');
+
+// Set car manual project image to a var
+const manualProjImage = document.getElementById('manualProjImage');
+
+manualProjImage.addEventListener('click',()=>{
+    jsProjDesc.style.display="none";
+    modalDiv.style.display="block";
+    gameBoard.style.display="none";
+    manualProjDesc.style.display="block";
+})
+
+// const manualProjClose = document.getElementById("closeManualProj");
+
+// manualProjClose.addEventListener('click',()=>{
+//     manualProjDesc.style.display="none";
+//     modalDiv.style.display="none";
+// })
+
+/* --------------- */
+/*    JS Project   */
+/*  -------------  */
+
+// Set JS Proj Image to a var
+const jsProjImage = document.getElementById('jsProjImage');
+
+// Set random jsProject Div to a var
+const jsProjDesc = document.getElementById('jsProjDesc');
+
+//adding event listener to proj image
+jsProjImage.addEventListener('click',()=>{
+    manualProjDesc.style.display="none";
+    gameBoard.style.display="none";
+    modalDiv.style.display="block";
+    jsProjDesc.style.display="block";
+})
+
+// // Set jsProjClose to a var
+// const jsProjClose = document.getElementById('jsProjClose');
+
+// //Adding event listener for close button
+// jsProjClose.addEventListener('click',()=>{
+//     jsProjDesc.style.display='none';
+//     modalDiv.style.display="none";
+// })
