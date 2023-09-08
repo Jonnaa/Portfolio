@@ -104,23 +104,23 @@ const gameText = document.getElementById("gameText");
 let counter = 0;
 let shipName;
 playGame.addEventListener('click',()=>{
-    let askForName = document.createElement("h3");
-    let nameInput = document.createElement("input");
-    if(counter===0){
-        askForName.setAttribute('id','askForName')
-        askForName.innerText="Name your ship!";
-        gameText.appendChild(askForName);
-        nameInput.setAttribute('id','nameInput')
-        gameText.appendChild(nameInput);
-        shipName = document.getElementById('nameInput').value;
-        console.log(shipName);
-    }
-    if(counter===1){
-        let a = document.getElementById("askForName");
-        let b = document.getElementById("nameInput");
-        a.remove();
-        b.remove();
-    }
+    // let askForName = document.createElement("h3");
+    // let nameInput = document.createElement("input");
+    // if(counter===0){
+    //     askForName.setAttribute('id','askForName')
+    //     askForName.innerText="Name your ship!";
+    //     gameText.appendChild(askForName);
+    //     nameInput.setAttribute('id','nameInput')
+    //     gameText.appendChild(nameInput);
+    //     shipName = document.getElementById('nameInput').value;
+    //     console.log(shipName);
+    // }
+    // if(counter===1){
+    //     let a = document.getElementById("askForName");
+    //     let b = document.getElementById("nameInput");
+    //     a.remove();
+    //     b.remove();
+    // }
     let newP = document.createElement("p");
     newP.innerText=`DO NOT PLAY THIS GAME ${counter}`;
     gameText.appendChild(newP);
