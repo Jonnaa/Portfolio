@@ -1,6 +1,10 @@
+/* ------------------------------------------------- */
+/*                      Globals                      */
+/* ------------------------------------------------- */
 :root{
     --primary-color:rgb(245, 192, 255);
-    --secondary-color: rgb(153, 153, 153);
+    /* --secondary-color: rgb(153, 153, 153); */
+    --secondary-color: rgb(123, 123, 123);
     --button-hover-color:rgb(92, 0, 177);
 }
 *{
@@ -12,13 +16,15 @@
 body{
     background: linear-gradient(var(--primary-color), rgba(11, 4, 53, 0.742));
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: .3fr 7fr;
+    /* display: grid;
+    grid-template-rows: .3fr 7fr; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* ---------------------------- */
-/*            Header            */
-/* ---------------------------- */
+
+
+/* ------------------------------------------------- */
+/*                        Header                     */
+/* ------------------------------------------------- */
 
 header{
     background-color: var(--secondary-color);
@@ -38,21 +44,22 @@ header{
     transition: background-color 1s, color 1s;
 }
 
-/* ---------------------------- */
-/*            Pages             */
-/* ---------------------------- */
+/* ------------------------------------------------- */
+/*                        Pages                      */
+/* ------------------------------------------------- */
 
 section {
     display:none;
 }
-/* --------------- */
-/*    Home Page    */
-/* --------------- */
+/* -------------------------- */
+/*          Home Page         */
+/* -------------------------- */
 
 #home{
     min-height: 100vh;
     display: block;
     padding: 0;
+    background: linear-gradient(var(--primary-color), rgba(11, 4, 53, 0.742));
 }
 section >h1{
     text-align: center;
@@ -61,9 +68,9 @@ section >h1{
     color: rgb(45, 1, 42);
 }
 
-/* --------------- */
-/*    About Page   */
-/* --------------- */
+/* -------------------------- */
+/*         About Page         */
+/* -------------------------- */
 
 #about{
     min-height: 100vh;
@@ -86,22 +93,22 @@ main>p{
     background-color: var(--secondary-color);
 }
 
-/* --------------- */
-/*   Resume Page   */
-/* --------------- */
+/* -------------------------- */
+/*        Resume Page         */
+/* -------------------------- */
 
 #resume{
     min-height: 100vh;
+    display: none;
 }
 #resume > img{
     display: block;
     margin: 10px auto;
 }
 
-
-/* --------------- */
-/*  Projects Page  */
-/* --------------- */
+/* -------------------------- */
+/*       Projects Page        */
+/* -------------------------- */
 
 #projects{
     min-height: 100vh;
@@ -112,7 +119,7 @@ main>p{
     display: none;
     margin:0 auto;
 }
-.images:first-of-type{
+div>.images:first-of-type{
     display: block;
 }
 .carouselButtons{
@@ -133,7 +140,9 @@ main>p{
 #spaceBattle:hover{
     cursor: pointer;
 }
-/* Modal */
+/* ------- */
+/*  Modal  */
+/* ------- */
 
 #modalDiv{
     display: none;
@@ -161,9 +170,9 @@ main>p{
 }
 
 
-/* ---------------------------- */
-/*            Footer            */
-/* ---------------------------- */
+/* ------------------------------------------------- */
+/*                        Footer                     */
+/* ------------------------------------------------- */
 body>footer{
     height: 51px;
     min-width: 100vw;
