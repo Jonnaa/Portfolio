@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: var(--primary-color);
+    background: linear-gradient(var(--primary-color), rgba(11, 4, 53, 0.742));
     min-height: 100vh;
     display: grid;
     grid-template-rows: .3fr 7fr;
@@ -22,18 +22,20 @@ body{
 
 header{
     background-color: var(--secondary-color);
+    position: sticky;
     top: 0;
 }
 .navButton{
-    background-color: black;
-    color:white;
-    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+    color:var(--secondary-color);
     font-size: 22px;
     padding: 7px 2px;
+    margin-right: 0px;
 }
 .navButton:hover{
     background-color:var(--button-hover-color);
-    transition: background-color 1s;
+    color:white;
+    transition: background-color 1s, color 1s;
 }
 
 /* ---------------------------- */
@@ -49,7 +51,6 @@ section {
 
 #home{
     min-height: 100vh;
-    background-color: var(--primary-color);
     display: block;
     padding: 0;
 }
@@ -65,7 +66,6 @@ section >h1{
 /* --------------- */
 
 #about{
-    background-color: var(--primary-color);
     min-height: 100vh;
     margin-bottom: 14px;
     padding: 0;
@@ -75,7 +75,7 @@ section >h1{
     display: block;
     height: 200px;
     margin: 60px auto;
-    border: solid rgb(104, 104, 104) 5px;
+    border: solid var(--secondary-color) 5px;
     border-radius: 50%;
 }
 
@@ -83,7 +83,7 @@ main>p{
     font-size: 20px;
     border-radius: 20px;
     padding:15px;
-    background-color: rgba(215, 215, 215, 0.498);
+    background-color: var(--secondary-color);
 }
 
 /* --------------- */
@@ -92,7 +92,6 @@ main>p{
 
 #resume{
     min-height: 100vh;
-    background-color: var(--primary-color);
 }
 #resume > img{
     display: block;
@@ -122,7 +121,8 @@ main>p{
 }
 .carouselButtons>button{
     border-radius: 8px;
-    width: 80px;
+    width: 100px;
+    font-size: 22px;
 }
 .carouselButtons>button:hover{
     background-color: var(--button-hover-color);
@@ -147,8 +147,8 @@ main>p{
     background-color: rgba(0, 0, 0, 0.498);
 }
 .insideModal{
-    background-color: rgb(166, 236, 255);
-    margin: 40px auto;
+    background-color: var(--primary-color);
+    margin: 70px auto 0;
     height: 400px;
     width: 350px;
     overflow: auto;
@@ -220,10 +220,21 @@ a>img:hover{
     section>h1{
         font-size: 3rem;
         margin: 150px auto 0;
+        font-weight: 600;
     }
     .insideModal{
         height:350px;
         width: 240px;
+    }
+    #about > img{
+        height: 120px;
+        margin:20px auto;
+    }
+    main>p{
+        font-size: 12px;
+        line-height: 190%;
+        letter-spacing: .3px;
+        color:white;
     }
     .images{
         height: 150px;
@@ -278,7 +289,7 @@ a>img:hover{
         margin: 250px auto 0;
     }
     main>p{
-        font-size: 19px;
+        font-size: 17px;
     }
     #about > img{
         height: 250px;
@@ -294,6 +305,9 @@ a>img:hover{
     section > h1 {
         font-size: 8rem;
         margin: 300px auto 0;
+    }
+    main>p{
+        font-size: 19px;
     }
     .insideModal{
         height:500px;
@@ -313,6 +327,7 @@ a>img:hover{
     section > h1 {
         font-size: 7rem;
         margin: 400px auto 0;
+        
     }
     .images{
         height: 400px;
