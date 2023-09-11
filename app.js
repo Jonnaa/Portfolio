@@ -101,6 +101,9 @@ spaceImg.addEventListener("click",()=>{
 
 modalClose.addEventListener('click',()=>{
     modalDiv.style.display="none";
+    manualProjDesc.style.display="none";
+    jsProjDesc.style.display="none";
+    gameBoard.style.display="block";
 })
 
 const initialDesc = document.getElementById("gameText").innerHTML;
@@ -114,8 +117,6 @@ playGame.addEventListener('click',()=>{
     let newP = document.createElement("p");
     newP.innerText=`DO NOT PLAY THIS GAME ${counter}`;
     gameText.appendChild(newP);
-    console.log(gameBoard);
-    console.log(insideModal);
     gameBoard.scrollIntoView({ block: "end" });
     counter++;
 })
@@ -144,13 +145,6 @@ manualProjImage.addEventListener('click',()=>{
     manualProjDesc.style.display="block";
 })
 
-// const manualProjClose = document.getElementById("closeManualProj");
-
-// manualProjClose.addEventListener('click',()=>{
-//     manualProjDesc.style.display="none";
-//     modalDiv.style.display="none";
-// })
-
 /* --------------- */
 /*    JS Project   */
 /*  -------------  */
@@ -168,12 +162,3 @@ jsProjImage.addEventListener('click',()=>{
     modalDiv.style.display="block";
     jsProjDesc.style.display="block";
 })
-
-// // Set jsProjClose to a var
-// const jsProjClose = document.getElementById('jsProjClose');
-
-// //Adding event listener for close button
-// jsProjClose.addEventListener('click',()=>{
-//     jsProjDesc.style.display='none';
-//     modalDiv.style.display="none";
-// })
