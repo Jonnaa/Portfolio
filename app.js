@@ -2,7 +2,7 @@
 /*     Single Page JS Code     */
 /* --------------------------- */
 
-/* Saving section elements(pages) to pages variable*/
+/* Saving section elements(pages) to pages variable */
 const pages = document.querySelectorAll('section')
 
 /* Saving nav buttons with class navButton to a variable*/

@@ -15,8 +15,6 @@
 body{
     background: linear-gradient(var(--primary-color), rgba(11, 4, 53, 0.742));
     min-height: 100vh;
-    /* display: grid;
-    grid-template-rows: .3fr 7fr; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -35,12 +33,16 @@ header{
     color:var(--secondary-color);
     font-size: 22px;
     padding: 7px 2px;
-    margin-right: 0px;
+    width: 120px;
 }
 .navButton:hover{
     background-color:var(--button-hover-color);
     color:white;
     transition: background-color 1s, color 1s;
+}
+.rightButtons{
+    float: right;
+    margin: 0;
 }
 
 /* ------------------------------------------------- */
@@ -111,7 +113,7 @@ main>p{
 
 #projects{
     min-height: 100vh;
-    padding-top: 20px;
+    padding: 20px 0 0 0;
 }
 #projectsPageDesc{
     text-align: center;
@@ -303,11 +305,15 @@ a>img:hover{
         height: 150px;
         margin:20px auto 20px;
     }
+    .navButton{
+        font-size: 12px;
+        width: 57px;
+    }
 }
 
 @media (min-width: 300px) {
     section > h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         margin: 170px auto 0;
     }
     .insideModal{
@@ -324,6 +330,10 @@ a>img:hover{
     .images{
         height: 180px;
         margin:30px auto 20px;
+    }
+    .navButton{
+        font-size: 14px;
+        width: 67px;
     }
 }
 
@@ -343,6 +353,10 @@ a>img:hover{
     .images{
         height: 220px;
         margin:40px auto 20px;
+    }
+    .navButton{
+        font-size: 17px;
+        width: 75px;
     }
 }
 @media (max-width:400px){
@@ -369,6 +383,10 @@ a>img:hover{
         height: 300px;
         margin:60px auto 20px;
     }
+    .navButton{
+        font-size: 19px;
+        width: 90px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -391,6 +409,10 @@ a>img:hover{
         height: 350px;
         margin:80px auto 20px;
     }
+    .navButton{
+        font-size: 21px;
+        width: 110px;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -402,5 +424,9 @@ a>img:hover{
     .images{
         height: 400px;
         margin:100px auto 20px;
+    }
+    .navButton{
+        font-size: 22px;
+        width: 120px;
     }
 }
