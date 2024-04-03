@@ -10,15 +10,15 @@ const Header = () => {
   }
   return (
     <>
-      <div className="sticky top-0 z-50 p-[2.2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+      <div className="sticky top-0 z-50 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible">Invis</span>
-          <span className="">Jonathan Navarro</span>
+          <span className="text-2xl">Jonathan Navarro</span>
           <nav className="">
             <img
               src={Burger}
               alt="Navigation Menu"
-              className="w-6 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer"
+              className="w-8 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer"
               onClick={handleOnClick}
             />
           </nav>
