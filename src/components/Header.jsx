@@ -19,13 +19,13 @@ const Header = () => {
     <>
       <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
-          <span className="invisible">Invis</span>
+          <span className="invisible"></span>
           {/* <span className="text-4xl">Jonathan Navarro</span> */}
           <nav className="">
             <img
               src={Burger}
               alt="Navigation Menu"
-              className="w-10 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer z-50"
+              className="w-10 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer z-50 hover:bg-purple-400 hover:from-purple-400"
               onClick={handleOnClick}
             />
           </nav>
