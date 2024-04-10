@@ -5,7 +5,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 const Header = () => {
   const [burgerClicked, setBurgerClicked] = useState(false);
   const navClasses =
-    "flex-auto w-full content-center text-center underline underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
+    "flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   function handleOnClick() {
     setBurgerClicked(!burgerClicked);
     if(burgerClicked){

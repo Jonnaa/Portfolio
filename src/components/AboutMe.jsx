@@ -4,7 +4,7 @@ const AboutMe = () => {
       className="min-h-[calc(100vh)]"
       id="aboutMe"
     >
-      <h1 className="text-4xl w-96 mx-auto text-center sticky top-0 z-40">
+      <h1 className="text-4xl w-96 mx-auto text-center sticky top-1 z-40">
         About Me
       </h1>
     </div>
