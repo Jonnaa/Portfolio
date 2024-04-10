@@ -10,10 +10,10 @@ const Header = () => {
   }
   return (
     <>
-      <div className="sticky top-0 z-50 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+      <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible">Invis</span>
-          <span className="text-4xl">Jonathan Navarro</span>
+          {/* <span className="text-4xl">Jonathan Navarro</span> */}
           <nav className="">
             <img
               src={Burger}
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
       </div>
       {burgerClicked ? (
-        <nav className="fixed w-full h-full z-40 overscroll-contain">
+        <nav className="fixed w-full h-full z-50 overscroll-contain">
           <div className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm">
             <a href="#home" className={navClasses} onClick={handleOnClick}>
               Home
