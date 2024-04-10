@@ -18,14 +18,14 @@ const Header = () => {
             <img
               src={Burger}
               alt="Navigation Menu"
-              className="w-10 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer"
+              className="w-10 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer z-50"
               onClick={handleOnClick}
             />
           </nav>
         </div>
       </div>
       {burgerClicked ? (
-        <nav className="fixed w-full h-full z-50 overscroll-contain">
+        <nav className="fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain">
           <div className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm">
             <a href="#home" className={navClasses} onClick={handleOnClick}>
               Home
