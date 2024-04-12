@@ -1,9 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const AboutMe = () => {
   const pClasses = "w-3/4 max-w-[700px] mx-auto md:text-lg md:w-3/5";
   const iconClasses = "basis-1/5 flex flex-col justify-between";
 
+  const ref = useRef(null)
+  const isInView = useInView(ref, {
+    amount:1/2,
+    once:true,
+  })
   const icons = [
     { id: 1, location: "skillsIcons/react.svg", name: "React" },
     {
@@ -51,13 +57,13 @@ const AboutMe = () => {
           <h2 className="text-center text-2xl underline decoration-slate-600">
             Skills
           </h2>
-          <div className="w-3/4 max-w-[600px] mx-auto text-center flex flex-wrap gap-y-10">
+          <div ref={ref} className="w-3/4 max-w-[600px] mx-auto text-center flex flex-wrap gap-y-10">
             {icons.map((icon, i) => (
               <motion.div
                 key={icon.id}
                 className={iconClasses}
-                initial={{ opacity: 0, trasnlateX: -50, translateY: -50 }}
-                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                animate={{ opacity: isInView? 1:0, translateX: isInView?0:-50, translateY:isInView?0:-50}}
                 transition={{ duration: 0.3, delay: i * 0.3 }}
               >
                 <img
