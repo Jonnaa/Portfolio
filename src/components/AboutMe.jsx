@@ -53,9 +53,9 @@ const AboutMe = () => {
             watching movies, and bouldering.
           </p>
         </div>
-        <div className="w-4/5 max-w-[800px] h-1 rounded-lg mx-auto bg-slate-600"></div>
+        <div className="w-4/5 max-w-[800px] h-1 rounded-lg mx-auto bg-purple-400"></div>
         <div>
-          <h2 className="text-center text-2xl underline decoration-slate-600">
+          <h2 className="text-center text-2xl underline decoration-purple-400">
             Skills
           </h2>
           <div

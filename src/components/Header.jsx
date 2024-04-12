@@ -27,7 +27,7 @@ const Header = () => {
             <img
               src={Burger}
               alt="Navigation Menu"
-              className="w-10 rounded bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 cursor-pointer z-50 hover:bg-purple-400 hover:from-purple-400"
+              className="w-10 rounded  hover:bg-red-500 cursor-pointer z-50 bg-white"
               onClick={handleOnClick}
             />
           </nav>
