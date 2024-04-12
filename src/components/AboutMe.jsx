@@ -1,6 +1,26 @@
+import { motion } from "framer-motion";
+
 const AboutMe = () => {
   const pClasses = "w-3/4 max-w-[700px] mx-auto md:text-lg md:w-3/5";
   const iconClasses = "basis-1/5 flex flex-col justify-between";
+
+  const icons = [
+    { id: 1, location: "skillsIcons/react.svg", name: "React" },
+    {
+      id: 2,
+      location: "skillsIcons/python-removebg-preview.png",
+      name: "Python",
+    },
+    { id: 3, location: "skillsIcons/js.png", name: "JavaScript" },
+    { id: 4, location: "skillsIcons/html.png", name: "HTML" },
+    { id: 5, location: "skillsIcons/css-removebg-preview.png", name: "CSS" },
+    { id: 6, location: "skillsIcons/tailwind.png", name: "Tailwind" },
+    { id: 7, location: "skillsIcons/nodejs.png", name: "NodeJs" },
+    { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJs" },
+    { id: 9, location: "skillsIcons/mdb.svg", name: "MongoDB" },
+    { id: 10, location: "skillsIcons/psql.png", name: "ProgreSQL" },
+  ];
+
   return (
     <div className="min-h-[calc(100vh)]" id="aboutMe">
       <h1 className="text-4xl w-48 md:w-96 mx-auto text-center sticky top-1 z-40">
@@ -32,67 +52,23 @@ const AboutMe = () => {
             Skills
           </h2>
           <div className="w-3/4 max-w-[600px] mx-auto text-center flex flex-wrap gap-y-10">
-            <div className={iconClasses}>
-              <img
-                src="skillsIcons/react.svg"
-                alt=""
-                className="w-4/5 m-auto"
-                title="React"
-              />
-              <p className="iconP">React</p>
-            </div>
-            <div className={iconClasses}>
-              <img
-                src="skillsIcons/python-removebg-preview.png"
-                alt=""
-                className="w-4/5 m-auto"
-              />
-              <p className="iconP">Python</p>
-            </div>
-            <div className={iconClasses}>
-              <img src="skillsIcons/js.png" alt="" className="w-4/5 m-auto" />
-              <p className="iconP">JavaScript</p>
-            </div>
-            <div className={iconClasses}>
-              <img src="skillsIcons/html.png" alt="" className="w-4/5 m-auto" />
-              <p className="iconP">HTML</p>
-            </div>
-            <div className={iconClasses}>
-              <img
-                src="skillsIcons/css-removebg-preview.png"
-                alt=""
-                className="w-4/5 m-auto"
-              />
-              <p className="iconP">CSS</p>
-            </div>
-            <div className={iconClasses}>
-              <img
-                src="skillsIcons/tailwind.png"
-                alt=""
-                className="w-4/5 m-auto"
-              />
-              <p className="iconP">Tailwind</p>
-            </div>
-            <div className={iconClasses}>
-              <img
-                src="skillsIcons/nodejs.png"
-                alt=""
-                className="w-4/5 m-auto"
-              />
-              <p className="iconP">NodeJS</p>
-            </div>
-            <div className={iconClasses}>
-              <img src="skillsIcons/ejs.png" alt="" className="w-4/5 m-auto" />
-              <p className="iconP">ExpressJS</p>
-            </div>
-            <div className={iconClasses}>
-              <img src="skillsIcons/mdb.svg" alt="" className="w-4/5 m-auto" />
-              <p className="iconP">MongoDB</p>
-            </div>
-            <div className={iconClasses}>
-              <img src="skillsIcons/psql.png" alt="" className="w-4/5 m-auto" />
-              <p className="iconP">PostgreSQL</p>
-            </div>
+            {icons.map((icon, i) => (
+              <motion.div
+                key={icon.id}
+                className={iconClasses}
+                initial={{ opacity: 0, trasnlateX: -50, translateY: -50 }}
+                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.3 }}
+              >
+                <img
+                  src={icon.location}
+                  alt={icon.name+" icon"}
+                  className="w-4/5 m-auto"
+                  title={icon.name}
+                />
+                <p>{icon.name}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
