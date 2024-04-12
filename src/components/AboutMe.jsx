@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform  } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AboutMe = () => {
@@ -10,6 +10,15 @@ const AboutMe = () => {
     amount: "half",
     once: true,
   });
+
+  const targetRef = useRef(null)
+  const {scrollYProgress} = useScroll({
+    target: targetRef,
+    offset: ["start end","end start"]
+  })
+
+  const opacity = useTransform(scrollYProgress, [.05,.45],[0,1])
+  const scale = useTransform(scrollYProgress, [0,.4],[.5,1])
 
   useEffect(() => {
     console.log(isInView);
@@ -29,7 +38,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="min-h-[calc(100vh)]" id="aboutMe">
+    <motion.div ref={targetRef} style={{opacity}} className="min-h-[calc(100vh)]" id="aboutMe">
       <h1 className="text-4xl w-48 md:w-96 mx-auto text-center sticky top-1 z-40">
         About Me
       </h1>
@@ -86,7 +95,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
