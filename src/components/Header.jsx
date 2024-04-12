@@ -39,7 +39,7 @@ const Header = () => {
           x:"-50%",
           y:"-50%"
         }}
-        className="fixed top-[50px] left-1/2 h-[6px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
+        className="fixed top-[52px] left-1/2 h-[8px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
       />
       {burgerClicked ? (
         <nav className="fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain">
