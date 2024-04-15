@@ -8,22 +8,18 @@ const Header = () => {
   const navClasses =
     "flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   const {scrollYProgress} = useScroll();
-    function handleOnClick() {
+
+  function handleOnClick() {
     setBurgerClicked(!burgerClicked);
-    if(burgerClicked){
-      enablePageScroll()
-    }
-    else{
-      disablePageScroll()
-    }
+    burgerClicked ? enablePageScroll() : disablePageScroll()
   }
+
   return (
     <>
       <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible"></span>
-          {/* <span className="text-4xl">Jonathan Navarro</span> */}
-          <nav className="">
+          <nav>
             <img
               src={Burger}
               alt="Navigation Menu"
