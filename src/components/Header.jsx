@@ -10,6 +10,11 @@ const Header = () => {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   };
+  const navLinks =[
+    {id:1, address: "#home", name: "Home"},
+    {id:2, address: "#aboutMe", name: "About Me"},
+    {id:3, address: "#projects", name: "Projects"}
+  ]
   const navClasses =
     "navButton flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   const { scrollYProgress } = useScroll();
@@ -54,37 +59,24 @@ const Header = () => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="navLinks fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain"
+          className="fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain"
         >
           <div
             ref={scope}
             className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm"
           >
-            <motion.a
+            {navLinks.map((link)=>(
+              <motion.a
+              key={link.id}
               initial={{ filter: "blur(10px)" }}
               animate={burgerClicked ? handleAnimate : "initial"}
-              href="#home"
+              href={link.address}
               className={navClasses}
               onClick={handleOnClick}
             >
-              Home
+              {link.name}
             </motion.a>
-            <motion.a
-              initial={{ filter: "blur(10px)" }}
-              href="#aboutMe"
-              className={navClasses}
-              onClick={handleOnClick}
-            >
-              About Me
-            </motion.a>
-            <motion.a
-              initial={{ filter: "blur(10px)" }}
-              href="#projects"
-              className={navClasses}
-              onClick={handleOnClick}
-            >
-              Projects
-            </motion.a>
+            ))}
           </div>
         </motion.nav>
       ) : (
