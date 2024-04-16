@@ -1,43 +1,37 @@
 import { useState } from "react";
 import Burger from "../assets/burger-menu.svg";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { motion, useScroll, useAnimate } from "framer-motion";
+import { motion, useScroll, useAnimate, stagger } from "framer-motion";
 
 const Header = () => {
   const [burgerClicked, setBurgerClicked] = useState(false);
   const [scope, animate] = useAnimate();
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
   const navClasses =
-    "flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
+    "navButton flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   const { scrollYProgress } = useScroll();
 
   function handleOnClick() {
     setBurgerClicked(!burgerClicked);
-    if (burgerClicked) {
-      enablePageScroll();
-      handleAnimate(false);
-    } else {
-      handleAnimate(true);
-      disablePageScroll();
-    }
+    burgerClicked?enablePageScroll():disablePageScroll()
   }
 
-  const handleAnimate = async (a) => {
-    a?
-    await animate("#burgerButton", { rotate: "90deg" })
-    :
-    await animate("#burgerButton", { rotate: "0deg" })
+  const handleAnimate = async () => {
+    await animate(".navButton",{ filter: "blur(0px)" },{ delay: stagger(0.3) });
   };
 
   return (
-    <>
+    <div>
       <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
-        <div
-          ref={scope}
-          className="bg-black flex flex-row justify-between p-px"
-        >
+        <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible"></span>
           <nav>
-            <img
+            <motion.img
+              initial={{ rotate: "0deg" }}
+              animate={burgerClicked ? { rotate: "90deg" } : "initial"}
               src={Burger}
               alt="Navigation Menu"
               id="burgerButton"
@@ -56,23 +50,47 @@ const Header = () => {
         className="fixed top-[49px] left-1/2 h-[8px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
       />
       {burgerClicked ? (
-        <nav className="fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain">
-          <div className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm">
-            <a href="#home" className={navClasses} onClick={handleOnClick}>
+        <motion.nav
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          className="navLinks fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain"
+        >
+          <div
+            ref={scope}
+            className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm"
+          >
+            <motion.a
+              initial={{ filter: "blur(10px)" }}
+              animate={burgerClicked ? handleAnimate : "initial"}
+              href="#home"
+              className={navClasses}
+              onClick={handleOnClick}
+            >
               Home
-            </a>
-            <a href="#aboutMe" className={navClasses} onClick={handleOnClick}>
+            </motion.a>
+            <motion.a
+              initial={{ filter: "blur(10px)" }}
+              href="#aboutMe"
+              className={navClasses}
+              onClick={handleOnClick}
+            >
               About Me
-            </a>
-            <a href="#projects" className={navClasses} onClick={handleOnClick}>
+            </motion.a>
+            <motion.a
+              initial={{ filter: "blur(10px)" }}
+              href="#projects"
+              className={navClasses}
+              onClick={handleOnClick}
+            >
               Projects
-            </a>
+            </motion.a>
           </div>
-        </nav>
+        </motion.nav>
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 };
 
