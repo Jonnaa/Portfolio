@@ -8,7 +8,7 @@ const Home = () => {
     offset: ["start start","end start"]
   })
 
-  const opacity = useTransform(scrollYProgress, [0,.15],[1,0])
+  const opacity = useTransform(scrollYProgress, [0,.2],[1,0])
   return (
     <div className="min-h-screen" id="home">
       <h1 className="text-4xl w-48 sm:w-96 mx-auto text-center sticky top-1 z-40">
