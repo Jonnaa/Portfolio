@@ -22,7 +22,7 @@ const AboutMe = () => {
   }]
 );
 
-  const h1Opacity = useTransform(scrollYProgress, [.05,.45,1],[0,1,0])
+  const h1Opacity = useTransform(scrollYProgress, [.05,.45],[0,1])
   const opacity = useTransform(scrollYProgress, [0.05, 0.45, 0.94], [0, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
 
