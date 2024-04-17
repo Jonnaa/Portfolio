@@ -2,7 +2,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AboutMe = () => {
-  const pClasses = "w-3/4 max-w-[700px] mx-auto md:text-lg md:w-3/5";
+  const pClasses = "w-3/4 max-w-[700px] mx-auto md:text-lg md:w-3/5 ";
   const iconClasses = "basis-1/5 flex flex-col justify-between";
 
   const ref = useRef(null);
@@ -53,7 +53,7 @@ const AboutMe = () => {
       <motion.div
         ref={wholeRef}
         style={{ opacity }}
-        className="h-screen flex flex-col justify-center gap-10"
+        className="h-screen flex flex-col justify-center gap-10 tracking-wide"
       >
         <div>
           <p className={pClasses}>
