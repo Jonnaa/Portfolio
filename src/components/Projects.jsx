@@ -147,7 +147,7 @@ const Projects = () => {
 
   // Variable that displays detailed version of whichever project is clicked
   let currentProject = (
-    <h1 className="w-full flex flex-col justify-center text-center text-2xl">
+    <h1 className="w-full text-center pt-44 text-4xl animate-pulse">
       Please click on a project!
     </h1>
   );
