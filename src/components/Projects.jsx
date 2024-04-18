@@ -84,7 +84,16 @@ const Projects = () => {
     }
   }
 
+  // Variable that displays detailed version of whichever project is clicked
+  let currentProject= <h1 className="w-full flex flex-col justify-center text-center text-2xl">Please click on a project!</h1>
 
+  if(projDisplay==="1"){
+    currentProject = <h1 className="w-full flex flex-col justify-center text-center text-2xl">Tempo</h1>
+  }
+  else if(projDisplay==="2"){currentProject = <h1 className="w-full flex flex-col justify-center text-center text-2xl">KDramas</h1>}
+  else if(projDisplay==="3"){
+    currentProject = <h1 className="w-full flex flex-col justify-center text-center text-2xl">KIT</h1>
+  }
   return (
     <div className="min-h-[calc(100vh)]" id="projects">
       <h1 className="text-4xl sticky top-1 z-40 w-96 mx-auto text-center">
@@ -132,9 +141,8 @@ const Projects = () => {
           </div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
-        <div className="border w-4/5 min-h-[calc(50vh)] mx-auto">
-          <span className="text-center">placeholder</span>
-          <h2 className="text-center">{projDisplay}</h2>
+        <div className="border w-4/5 min-h-[calc(50vh)] mx-auto relative flex">
+          {currentProject}
         </div>
       </div>
     </div>
