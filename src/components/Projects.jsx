@@ -158,7 +158,7 @@ const Projects = () => {
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           Tempo
         </h1>
-        <div className="relative flex justify-center w-full h-full">
+        {/* <div className="relative flex justify-center w-full h-full">
           <button onClick={handlePrev} type="button" id="tempo" className="tempo w-1/12 border">
             Prev
           </button>
@@ -170,8 +170,15 @@ const Projects = () => {
           <button onClick={handleNext} type="button" className="tempo w-1/12 border">
             Next
           </button>
+        </div> */}
+        <div className="snap-x snap-mandatory flex flex-nowrap overflow-auto w-1/2 mx-auto">
+          {tempoImgs.map((tempoImg)=>(
+            <div key={tempoImg.id} className="snap-start snap-always shrink-0 w-full">
+              <img src={tempoImg.location} alt={tempoImg.name} className=""/>
+            </div>
+          ))}
         </div>
-        <div>Desc asdasdasasdasdasdasdasdasdas</div>
+        <div>GitHub Website</div>
       </div>
     );
   } else if (projDisplay === 2) {
