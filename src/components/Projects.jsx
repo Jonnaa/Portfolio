@@ -42,30 +42,24 @@ const Projects = () => {
   ];
 
   const kitImgs = [
-    { id: 1, location: "public/kitScreenshots/Landing Page.jpg", name: "Home" },
     {
-      id: 2,
-      location: "public/kitScreenshots/Landing Page -Logged in.jpg",
+      id: 1,
+      location: "kitScreenshots/Landing Page -Logged in.jpg",
       name: "Artist Index",
     },
     {
-      id: 3,
-      location: "public/kitScreenshots/Post Details.jpg",
+      id: 2,
+      location: "kitScreenshots/Post Details.jpg",
       name: "Artist Detail",
     },
     {
-      id: 4,
-      location: "public/kitScreenshots/Create Post.jpg",
+      id: 3,
+      location: "kitScreenshots/Create Post.jpg",
       name: "Player",
     },
     {
-      id: 5,
-      location: "public/kitScreenshots/Login.jpg",
-      name: "Merch Index",
-    },
-    {
-      id: 6,
-      location: "public/kitScreenshots/Updated Landing Page.jpg",
+      id: 4,
+      location: "kitScreenshots/Login.jpg",
       name: "Merch Index",
     },
   ];
@@ -268,7 +262,7 @@ const Projects = () => {
           >
             <h2>KIT</h2>
             <div>
-              <img src={kitImgs[5].location} alt="" />
+              <img src={kitImgs[0].location} alt="" />
             </div>
           </div>
         </div>
