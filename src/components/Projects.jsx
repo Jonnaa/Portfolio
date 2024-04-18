@@ -70,85 +70,86 @@ const Projects = () => {
     },
   ];
 
-  const [currentTempoImg, setCurrentTempoImg] = useState(0)
-  const [currentKdramasImg, setCurrentKdramasImg] = useState(0)
-  const [currentKitImg, setCurrentKitImg] = useState(0)
+  const [currentTempoImg, setCurrentTempoImg] = useState(0);
+  const [currentKdramasImg, setCurrentKdramasImg] = useState(0);
+  const [currentKitImg, setCurrentKitImg] = useState(0);
   const [projDisplay, setProjDisplay] = useState(0);
 
   function switchDisplay(val) {
     if (val === 1) {
       setProjDisplay(1);
+      setCurrentKdramasImg(0)
+      setCurrentKitImg(0)
     } else if (val === 2) {
       setProjDisplay(2);
+      setCurrentTempoImg(0)
+      setCurrentKitImg(0)
     } else if (val === 3) {
       setProjDisplay(3);
+      setCurrentTempoImg(0)
+      setCurrentKdramasImg(0)
     } else {
       setProjDisplay(0);
     }
   }
 
   // onclick handler for prev button
-  function handlePrev(event){
-    let projName = event.target.className
-    switch(projName){
-      case 'tempo':
-          if(currentTempoImg>=1){
-              setCurrentTempoImg(currentTempoImg-1)
-          }
-          else{
-              setCurrentTempoImg(tempoImgs.length-1)
-          }
-          break
-      case 'kdramas':
-          if(currentKdramasImg>=1){
-              setCurrentKdramasImg(currentKdramasImg-1)
-          }
-          else{
-              setCurrentKdramasImg(kdramasImgs.length-1)
-          }
-          break
-          case 'kit':
-          if(currentKitImg>=1){
-              setCurrentKitImg(currentKitImg-1)
-          }
-          else{
-              setCurrentKitImg(kitImgs.length-1)
-          }
-          break
+  function handlePrev(event) {
+    let projName = event.target.className;
+    projName = projName.substring(0, projName.indexOf(' '))
+    switch (projName) {
+      case "tempo":
+        if (currentTempoImg >= 1) {
+          setCurrentTempoImg(currentTempoImg - 1);
+        } else {
+          setCurrentTempoImg(tempoImgs.length - 1);
         }
+        break;
+      case "kdramas":
+        if (currentKdramasImg >= 1) {
+          setCurrentKdramasImg(currentKdramasImg - 1);
+        } else {
+          setCurrentKdramasImg(kdramasImgs.length - 1);
+        }
+        break;
+      case "kit":
+        if (currentKitImg >= 1) {
+          setCurrentKitImg(currentKitImg - 1);
+        } else {
+          setCurrentKitImg(kitImgs.length - 1);
+        }
+        break;
+    }
   }
 
   // onclick handler for next button
-  function handleNext(event){
+  function handleNext(event) {
     let projName = event.target.className
-    switch(projName){
-      case 'tempo':
-          if(currentTempoImg<tempoImgs.length-1){
-              setCurrentTempoImg(currentTempoImg+1)
-            }
-            else{
-              setCurrentTempoImg(0)
-          }
-          break
-          case 'kdramas':
-            if(currentKdramasImg<kdramasImgs.length-1){
-                setCurrentKdramasImg(currentKdramasImg+1)
-            }
-            else{
-                setCurrentKdramasImg(0)
-            }
-            break
-          case 'kit':
-            if(currentKitImg<kitImgs.length-1){
-                setCurrentKitImg(currentKitImg+1)
-            }
-            else{
-                setCurrentKitImg(0)
-            }
-            break
-          }
+    projName = projName.substring(0, projName.indexOf(' '))
+    switch (projName) {
+      case "tempo":
+        if (currentTempoImg < tempoImgs.length - 1) {
+          setCurrentTempoImg(currentTempoImg + 1);
+        } else {
+          setCurrentTempoImg(0);
+        }
+        break;
+      case "kdramas":
+        if (currentKdramasImg < kdramasImgs.length - 1) {
+          setCurrentKdramasImg(currentKdramasImg + 1);
+        } else {
+          setCurrentKdramasImg(0);
+        }
+        break;
+      case "kit":
+        if (currentKitImg < kitImgs.length - 1) {
+          setCurrentKitImg(currentKitImg + 1);
+        } else {
+          setCurrentKitImg(0);
+        }
+        break;
+    }
   }
-
 
   // Variable that displays detailed version of whichever project is clicked
   let currentProject = (
@@ -159,16 +160,24 @@ const Projects = () => {
 
   if (projDisplay === 1) {
     currentProject = (
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full flex flex-col items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           Tempo
         </h1>
-        <div className="relative flex justify-center">
-          <button onClick={handlePrev} className="tempo">Prev</button>
-          <img src={tempoImgs[currentTempoImg].location} alt="" className="w-10/12 max-w-[700px]"/>
-          <button onClick={handleNext} className="tempo">Next</button>
+        <div className="relative flex justify-center w-full h-full">
+          <button onClick={handlePrev} type="button" id="tempo" className="tempo w-1/12 border">
+            Prev
+          </button>
+          <img
+            src={tempoImgs[currentTempoImg].location}
+            alt=""
+            className="w-6/12"
+          />
+          <button onClick={handleNext} type="button" className="tempo w-1/12 border">
+            Next
+          </button>
         </div>
-        <div>Desc</div>
+        <div>Desc asdasdasasdasdasdasdasdasdas</div>
       </div>
     );
   } else if (projDisplay === 2) {
@@ -178,9 +187,17 @@ const Projects = () => {
           KDramas
         </h1>
         <div className="relative flex justify-center">
-          <button onClick={handlePrev} className="kdramas">Prev</button>
-          <img src={kdramasImgs[currentKdramasImg].location} alt="" className="w-10/12 max-w-[700px]"/>
-          <button onClick={handleNext} className="kdramas">Next</button>
+          <button onClick={handlePrev} className="kdramas w-1/12 border">
+            Prev
+          </button>
+          <img
+            src={kdramasImgs[currentKdramasImg].location}
+            alt=""
+            className="w-6/12"
+          />
+          <button onClick={handleNext} className="kdramas w-1/12 border">
+            Next
+          </button>
         </div>
         <div>Desc</div>
       </div>
@@ -192,9 +209,17 @@ const Projects = () => {
           KIT
         </h1>
         <div className="relative flex justify-center">
-          <button onClick={handlePrev} className="kit">Prev</button>
-          <img src={kitImgs[currentKitImg].location} alt="" className="w-10/12 max-w-[700px]"/>
-          <button onClick={handleNext} className="kit">Next</button>
+          <button onClick={handlePrev} className="kit w-1/12 border">
+            Prev
+          </button>
+          <img
+            src={kitImgs[currentKitImg].location}
+            alt=""
+            className="w-6/12"
+          />
+          <button onClick={handleNext} className="kit w-1/12 border">
+            Next
+          </button>
         </div>
         <div>Desc</div>
       </div>
@@ -207,12 +232,12 @@ const Projects = () => {
         Projects
       </h1>
       {/* Projects page contents */}
-      <div className="mx-4 my-6 min-w-[calc(90vh)] min-h-[calc(90vh)] border relative flex justify-between flex-col py-[20px]">
+      <div className="w-full relative flex justify-between gap-4 flex-col pt-20">
         {/* Div holds projects - small versions */}
-        <div className="flex justify-between w-11/12 gap-4 mx-auto relative">
+        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative">
           {/* Project 1 Div */}
           <div
-            className="w-1/3 border cursor-pointer min-h-[calc(20vh)]"
+            className="w-56 border cursor-pointer"
             onClick={() => {
               switchDisplay(1);
             }}
@@ -224,7 +249,7 @@ const Projects = () => {
           </div>
           {/* Project 2 Div */}
           <div
-            className="w-1/3 border cursor-pointer"
+            className="w-56 border cursor-pointer"
             onClick={() => {
               switchDisplay(2);
             }}
@@ -236,7 +261,7 @@ const Projects = () => {
           </div>
           {/* Project 3 Div */}
           <div
-            className="w-1/3 border cursor-pointer"
+            className="w-56 border cursor-pointer"
             onClick={() => {
               switchDisplay(3);
             }}
@@ -248,9 +273,7 @@ const Projects = () => {
           </div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
-        <div className="border w-11/12 min-h-[calc(60vh)] mx-auto relative flex">
-          {currentProject}
-        </div>
+        <div className="w-full relative flex">{currentProject}</div>
       </div>
     </div>
   );
