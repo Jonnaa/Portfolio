@@ -69,16 +69,16 @@ const Projects = () => {
   function switchDisplay(val) {
     if (val === 1) {
       setProjDisplay(1);
-      setCurrentKdramasImg(0);
-      setCurrentKitImg(0);
+      // setCurrentKdramasImg(0);
+      // setCurrentKitImg(0);
     } else if (val === 2) {
       setProjDisplay(2);
-      setCurrentTempoImg(0);
-      setCurrentKitImg(0);
+      // setCurrentTempoImg(0);
+      // setCurrentKitImg(0);
     } else if (val === 3) {
       setProjDisplay(3);
-      setCurrentTempoImg(0);
-      setCurrentKdramasImg(0);
+      // setCurrentTempoImg(0);
+      // setCurrentKdramasImg(0);
     } else {
       setProjDisplay(0);
     }
