@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 const Projects = () => {
   const tempoImgs = [
@@ -72,16 +72,16 @@ const Projects = () => {
   function switchDisplay(val) {
     if (val === 1) {
       setProjDisplay(1);
-      setCurrentKdramasImg(0)
-      setCurrentKitImg(0)
+      setCurrentKdramasImg(0);
+      setCurrentKitImg(0);
     } else if (val === 2) {
       setProjDisplay(2);
-      setCurrentTempoImg(0)
-      setCurrentKitImg(0)
+      setCurrentTempoImg(0);
+      setCurrentKitImg(0);
     } else if (val === 3) {
       setProjDisplay(3);
-      setCurrentTempoImg(0)
-      setCurrentKdramasImg(0)
+      setCurrentTempoImg(0);
+      setCurrentKdramasImg(0);
     } else {
       setProjDisplay(0);
     }
@@ -90,7 +90,7 @@ const Projects = () => {
   // onclick handler for prev button
   function handlePrev(event) {
     let projName = event.target.className;
-    projName = projName.substring(0, projName.indexOf(' '))
+    projName = projName.substring(0, projName.indexOf(" "));
     switch (projName) {
       case "tempo":
         if (currentTempoImg >= 1) {
@@ -118,8 +118,8 @@ const Projects = () => {
 
   // onclick handler for next button
   function handleNext(event) {
-    let projName = event.target.className
-    projName = projName.substring(0, projName.indexOf(' '))
+    let projName = event.target.className;
+    projName = projName.substring(0, projName.indexOf(" "));
     switch (projName) {
       case "tempo":
         if (currentTempoImg < tempoImgs.length - 1) {
@@ -172,9 +172,12 @@ const Projects = () => {
           </button>
         </div> */}
         <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-1/2 mx-auto">
-          {tempoImgs.map((tempoImg)=>(
-            <div key={tempoImg.id} className="snap-start snap-always shrink-0 w-full">
-              <img src={tempoImg.location} alt={tempoImg.name} className="object-cover"/>
+          {tempoImgs.map((tempoImg) => (
+            <div
+              key={tempoImg.id}
+              className="snap-start snap-always shrink-0 w-full"
+            >
+              <img src={tempoImg.location} alt={tempoImg.name}/>
             </div>
           ))}
         </div>
