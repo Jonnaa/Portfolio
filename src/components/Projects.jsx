@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 
 const Projects = () => {
   const tempoImgs = [
@@ -171,10 +171,10 @@ const Projects = () => {
             Next
           </button>
         </div> */}
-        <div className="snap-x snap-mandatory flex flex-nowrap overflow-auto w-1/2 mx-auto">
+        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-1/2 mx-auto">
           {tempoImgs.map((tempoImg)=>(
             <div key={tempoImg.id} className="snap-start snap-always shrink-0 w-full">
-              <img src={tempoImg.location} alt={tempoImg.name} className=""/>
+              <img src={tempoImg.location} alt={tempoImg.name} className="object-cover"/>
             </div>
           ))}
         </div>
