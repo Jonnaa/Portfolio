@@ -1,7 +1,7 @@
-import AboutMe from "./AboutMe";
-import Header from "./Header";
-import Home from "./Home";
-import Projects from "./Projects";
+import AboutMe from "../AboutMe";
+import Header from "../Header";
+import Home from "../Home";
+import Projects from "../Projects";
 
 const App = () => {
   return (

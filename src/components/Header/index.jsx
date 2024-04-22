@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Burger from "../assets/burger-menu.svg";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { motion, useScroll, useAnimate, stagger } from "framer-motion";
 
@@ -37,7 +36,7 @@ const Header = () => {
             <motion.img
               initial={{ rotate: "0deg" }}
               animate={burgerClicked ? { rotate: "90deg" } : "initial"}
-              src={Burger}
+              src="burger-menu.svg"
               alt="Navigation Menu"
               id="burgerButton"
               className="w-10 rounded  hover:bg-red-500 cursor-pointer z-50 bg-white"

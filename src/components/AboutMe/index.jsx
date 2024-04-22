@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -13,18 +14,20 @@ const AboutMe = () => {
 
   const h1Ref = useRef(null);
   const wholeRef = useRef(null);
-  const { scrollYProgress } = useScroll([{
-    target: h1Ref,
-    offset: ["start end", "end start"],
-  },{
-    target: wholeRef,
-    offset: ["start end", "end start"],
-  }]
-);
+  const { scrollYProgress } = useScroll([
+    {
+      target: h1Ref,
+      offset: ["start end", "end start"],
+    },
+    {
+      target: wholeRef,
+      offset: ["start end", "end start"],
+    },
+  ]);
 
-  const h1Opacity = useTransform(scrollYProgress, [.05,.45],[0,1])
+  const h1Opacity = useTransform(scrollYProgress, [0.05, 0.45], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0.05, 0.45, 0.94], [0, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
+  // const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
 
   useEffect(() => {
     console.log(isInView);
@@ -45,9 +48,11 @@ const AboutMe = () => {
 
   return (
     <div className="min-h-[calc(100vh)]" id="aboutMe">
-      <motion.h1 ref={h1Ref}
-        style={{ opacity:h1Opacity }}
-        className="text-4xl w-48 md:w-96 mx-auto text-center sticky top-1 z-40">
+      <motion.h1
+        ref={h1Ref}
+        style={{ opacity: h1Opacity }}
+        className="text-4xl w-48 md:w-96 mx-auto text-center sticky top-1 z-40"
+      >
         About Me
       </motion.h1>
       <motion.div
