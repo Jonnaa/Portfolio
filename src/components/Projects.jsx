@@ -93,7 +93,7 @@ const Projects = () => {
 
   if (projDisplay === 1) {
     currentProject = (
-      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="p-[1.5px] bg-purple-400 w-3/4 h-[550px] max-w-[900px] mx-auto">
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           Tempo
@@ -114,7 +114,7 @@ const Projects = () => {
     );
   } else if (projDisplay === 2) {
     currentProject = (
-      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="p-[1.5px] bg-purple-400 w-3/4 h-[550px] max-w-[900px] mx-auto">
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           KDramas
@@ -135,7 +135,7 @@ const Projects = () => {
     );
   } else if (projDisplay === 3) {
     currentProject = (
-      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="p-[1.5px] bg-purple-400 w-3/4 h-[550px] max-w-[900px] mx-auto">
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           KIT
@@ -166,7 +166,7 @@ const Projects = () => {
         {/* Div holds projects - small versions */}
         <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative text-center">
           {/* Project 1 Div */}
-          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+          <div className="p-[1.5px] bg-purple-400">
             <div
               className="w-60 bg-black cursor-pointer"
               onClick={() => {
@@ -181,7 +181,7 @@ const Projects = () => {
           </div>
 
           {/* Project 2 Div */}
-          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"><div
+          <div className="p-[1.5px] bg-purple-400"><div
             className="w-60 bg-black cursor-pointer"
             onClick={() => {
               switchDisplay(2);
@@ -194,7 +194,7 @@ const Projects = () => {
           </div></div>
           
           {/* Project 3 Div */}
-          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"><div
+          <div className="p-[1.5px] bg-purple-400"><div
             className="w-60 bg-black cursor-pointer"
             onClick={() => {
               switchDisplay(3);
