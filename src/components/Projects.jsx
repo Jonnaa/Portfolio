@@ -93,59 +93,65 @@ const Projects = () => {
 
   if (projDisplay === 1) {
     currentProject = (
-      <div className="relative w-full h-full flex flex-col items-center">
+      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           Tempo
         </h1>
-        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-1/2 mx-auto">
+        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-full mx-auto max-w-[700px]">
           {tempoImgs.map((tempoImg) => (
             <div
               key={tempoImg.id}
-              className="snap-start snap-always shrink-0 w-full"
+              className="snap-start snap-always shrink-0 w-full max-w-[700px]"
             >
-              <img src={tempoImg.location} alt={tempoImg.name}/>
+              <img src={tempoImg.location} alt={tempoImg.name} />
             </div>
           ))}
         </div>
         <div>GitHub Website</div>
+      </div>
       </div>
     );
   } else if (projDisplay === 2) {
     currentProject = (
-      <div className="relative w-full h-full">
+      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           KDramas
         </h1>
-        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-1/2 mx-auto">
+        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-full mx-auto max-w-[700px]">
           {kdramasImgs.map((kdramasImg) => (
             <div
               key={kdramasImg.id}
-              className="snap-start snap-always shrink-0 w-full"
+              className="snap-start snap-always shrink-0 w-full max-w-[700px]"
             >
-              <img src={kdramasImg.location} alt={kdramasImg.name}/>
+              <img src={kdramasImg.location} alt={kdramasImg.name} />
             </div>
           ))}
         </div>
         <div>GitHub Website</div>
       </div>
+      </div>
     );
   } else if (projDisplay === 3) {
     currentProject = (
-      <div className="relative w-full h-full">
+      <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-3/4 h-[550px] max-w-[900px] mx-auto">
+      <div className="bg-black h-full relative flex flex-col justify-between items-center">
         <h1 className="w-full flex flex-col justify-center text-center text-2xl">
           KIT
         </h1>
-        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-1/2 mx-auto">
+        <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-full mx-auto max-w-[700px]">
           {kitImgs.map((kitImg) => (
             <div
               key={kitImg.id}
-              className="snap-start snap-always shrink-0 w-full"
+              className="snap-start snap-always shrink-0 w-full max-w-[700px]"
             >
-              <img src={kitImg.location} alt={kitImg.name}/>
+              <img src={kitImg.location} alt={kitImg.name} />
             </div>
           ))}
         </div>
         <div>GitHub Website</div>
+      </div>
       </div>
     );
   }
@@ -158,22 +164,25 @@ const Projects = () => {
       {/* Projects page contents */}
       <div className="w-full relative flex justify-between gap-4 flex-col pt-20">
         {/* Div holds projects - small versions */}
-        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative">
+        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative text-center">
           {/* Project 1 Div */}
-          <div
-            className="w-56 border cursor-pointer"
-            onClick={() => {
-              switchDisplay(1);
-            }}
-          >
-            <h2>Tempo</h2>
-            <div>
-              <img src={tempoImgs[1].location} alt="" />
+          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            <div
+              className="w-60 bg-black cursor-pointer"
+              onClick={() => {
+                switchDisplay(1);
+              }}
+            >
+              <h2>Tempo</h2>
+              <div>
+                <img src={tempoImgs[0].location} alt="" />
+              </div>
             </div>
           </div>
+
           {/* Project 2 Div */}
-          <div
-            className="w-56 border cursor-pointer"
+          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"><div
+            className="w-60 bg-black cursor-pointer"
             onClick={() => {
               switchDisplay(2);
             }}
@@ -182,10 +191,11 @@ const Projects = () => {
             <div>
               <img src={kdramasImgs[0].location} alt="" />
             </div>
-          </div>
+          </div></div>
+          
           {/* Project 3 Div */}
-          <div
-            className="w-56 border cursor-pointer"
+          <div className="p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"><div
+            className="w-60 bg-black cursor-pointer"
             onClick={() => {
               switchDisplay(3);
             }}
@@ -194,7 +204,8 @@ const Projects = () => {
             <div>
               <img src={kitImgs[0].location} alt="" />
             </div>
-          </div>
+          </div></div>
+          
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
         <div className="w-full relative flex">{currentProject}</div>
