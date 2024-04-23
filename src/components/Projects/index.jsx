@@ -70,16 +70,10 @@ const Projects = () => {
   function switchDisplay(val) {
     if (val === 1) {
       setProjDisplay(1);
-      // setCurrentKdramasImg(0);
-      // setCurrentKitImg(0);
     } else if (val === 2) {
       setProjDisplay(2);
-      // setCurrentTempoImg(0);
-      // setCurrentKitImg(0);
     } else if (val === 3) {
       setProjDisplay(3);
-      // setCurrentTempoImg(0);
-      // setCurrentKdramasImg(0);
     } else {
       setProjDisplay(0);
     }
@@ -93,17 +87,11 @@ const Projects = () => {
   );
 
   if (projDisplay === 1) {
-    currentProject = (
-      <Project imgs={tempoImgs} name={"Tempo"}/>
-    );
+    currentProject = <Project imgs={tempoImgs} name={"Tempo"} />;
   } else if (projDisplay === 2) {
-    currentProject = (
-      <Project imgs={kdramasImgs} name={"KDramas"}/>
-    );
+    currentProject = <Project imgs={kdramasImgs} name={"KDramas"} />;
   } else if (projDisplay === 3) {
-    currentProject = (
-      <Project imgs={kitImgs} name={"KIT"}/>
-    );
+    currentProject = <Project imgs={kitImgs} name={"KIT"} />;
   }
 
   return (
@@ -131,31 +119,34 @@ const Projects = () => {
           </div>
 
           {/* Project 2 Div */}
-          <div className="p-[1.5px] bg-purple-400"><div
-            className="w-60 bg-black cursor-pointer"
-            onClick={() => {
-              switchDisplay(2);
-            }}
-          >
-            <h2>KDramas</h2>
-            <div>
-              <img src={kdramasImgs[0].location} alt="" />
+          <div className="p-[1.5px] bg-purple-400">
+            <div
+              className="w-60 bg-black cursor-pointer"
+              onClick={() => {
+                switchDisplay(2);
+              }}
+            >
+              <h2>KDramas</h2>
+              <div>
+                <img src={kdramasImgs[0].location} alt="" />
+              </div>
             </div>
-          </div></div>
-          
+          </div>
+
           {/* Project 3 Div */}
-          <div className="p-[1.5px] bg-purple-400"><div
-            className="w-60 bg-black cursor-pointer"
-            onClick={() => {
-              switchDisplay(3);
-            }}
-          >
-            <h2>KIT</h2>
-            <div>
-              <img src={kitImgs[0].location} alt="" />
+          <div className="p-[1.5px] bg-purple-400">
+            <div
+              className="w-60 bg-black cursor-pointer"
+              onClick={() => {
+                switchDisplay(3);
+              }}
+            >
+              <h2>KIT</h2>
+              <div>
+                <img src={kitImgs[0].location} alt="" />
+              </div>
             </div>
-          </div></div>
-          
+          </div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
         <div className="w-full relative flex">{currentProject}</div>
