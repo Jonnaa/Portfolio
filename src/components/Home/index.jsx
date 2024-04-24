@@ -22,8 +22,8 @@ const Home = () => {
         // viewport={{ amount: "all", once: true }}
         // transition={{ delay: .25, duration:.5 }}
       >
-        <h1 className="text-6xl">Jonathan Navarro</h1>
-        <p className="text-3xl pt-12">Software Engineer</p>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl">Jonathan Navarro</h1>
+        <p className="text-xl sm:text-2xl md:text-3xl pt-12">Software Engineer</p>
       </motion.div>
     </div>
   );
