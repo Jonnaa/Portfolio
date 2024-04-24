@@ -3,8 +3,8 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AboutMe = () => {
-  const pClasses = "w-3/4 max-w-[700px] mx-auto text-md sm:text-lg md:w-3/5 ";
-  const iconClasses = "basis-1/5 sm:basis-1/5 flex flex-col justify-between text-sm";
+  const pClasses = "w-4/5 sm:w-3/4 max-w-[500px] mx-auto text-sm md:text-md lg:text-lg md:w-3/5 ";
+  const iconClasses = "basis-1/5 sm:basis-1/5 flex flex-col justify-between text-sm max-w-[100px]";
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -81,12 +81,12 @@ const AboutMe = () => {
         </div>
         <div className="w-4/5 max-w-[800px] h-1 rounded-lg mx-auto bg-purple-400"></div>
         <div>
-          <h2 className="text-center text-xl sm:text-2xl underline decoration-purple-400">
+          <h2 className="text-center text-xl sm:text-2xl lg:text-3xl underline decoration-purple-400">
             Skills
           </h2>
           <div
             ref={ref}
-            className="w-4/5 sm:w-3/4 max-w-[600px] mx-auto text-center flex flex-wrap justify-center gap-x-3 sm:gap-x-0 gap-y-4 sm:gap-y-10"
+            className="w-4/5 sm:w-3/4 max-w-[550px] mx-auto text-center flex flex-wrap justify-center gap-x-3 sm:gap-x-0 gap-y-4 sm:gap-y-10"
           >
             {icons.map((icon, i) => (
               <motion.div
