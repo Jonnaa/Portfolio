@@ -29,9 +29,9 @@ const AboutMe = () => {
   const opacity = useTransform(scrollYProgress, [0.05, 0.45, 0.94], [0, 1, 0]);
   // const scale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
 
-  useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
+  // useEffect(() => {
+  //   console.log(isInView);
+  // }, [isInView]);
 
   const icons = [
     { id: 1, location: "skillsIcons/react.svg", name: "React" },
