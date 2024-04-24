@@ -100,11 +100,11 @@ const Projects = () => {
         Projects
       </h1>
       {/* Projects page contents */}
-      <div className="md:w-4/5 lg:w-10/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 lg:gap-10">
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10">
         {/* Div holds projects - small versions */}
-        <div className="flex flex-wrap justify-between gap-3 w-full mx-auto relative text-center lg:text-lg">
+        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative text-center md:text-md">
           {/* Project 1 Div */}
-          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -119,7 +119,7 @@ const Projects = () => {
           </div>
 
           {/* Project 2 Div */}
-          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -134,7 +134,7 @@ const Projects = () => {
           </div>
 
           {/* Project 3 Div */}
-          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
