@@ -100,13 +100,13 @@ const Projects = () => {
         Projects
       </h1>
       {/* Projects page contents */}
-      <div className="w-full relative flex justify-between gap-4 flex-col pt-20">
+      <div className="md:w-4/5 lg:w-10/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 lg:gap-10">
         {/* Div holds projects - small versions */}
-        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative text-center">
+        <div className="flex flex-wrap justify-between gap-3 w-full mx-auto relative text-center lg:text-lg">
           {/* Project 1 Div */}
-          <div className="p-[1.5px] bg-purple-400">
+          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
             <div
-              className="w-60 bg-black cursor-pointer"
+              className="w-full bg-black cursor-pointer"
               onClick={() => {
                 switchDisplay(1);
               }}
@@ -119,9 +119,9 @@ const Projects = () => {
           </div>
 
           {/* Project 2 Div */}
-          <div className="p-[1.5px] bg-purple-400">
+          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
             <div
-              className="w-60 bg-black cursor-pointer"
+              className="w-full bg-black cursor-pointer"
               onClick={() => {
                 switchDisplay(2);
               }}
@@ -134,9 +134,9 @@ const Projects = () => {
           </div>
 
           {/* Project 3 Div */}
-          <div className="p-[1.5px] bg-purple-400">
+          <div className="lg:w-1/4 p-[1.5px] bg-purple-400">
             <div
-              className="w-60 bg-black cursor-pointer"
+              className="w-full bg-black cursor-pointer"
               onClick={() => {
                 switchDisplay(3);
               }}
@@ -149,7 +149,7 @@ const Projects = () => {
           </div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
-        <div className="w-full relative flex">{currentProject}</div>
+        <div className=" p-[1.5px] bg-purple-400 w-full mx-auto">{currentProject}</div>
       </div>
     </div>
   );

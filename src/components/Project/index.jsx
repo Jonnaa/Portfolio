@@ -1,8 +1,8 @@
-const Project = ({imgs,name}) => {
+const Project = ({ imgs, name }) => {
   return (
-    <div className="p-[1.5px] bg-purple-400 w-3/4 h-[550px] max-w-[900px] mx-auto">
+    <>
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
-        <h1 className="w-full flex flex-col justify-center text-center text-2xl">
+        <h1 className="w-full flex flex-col justify-center text-center lg:text-3xl">
           {name}
         </h1>
         <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-full mx-auto max-w-[700px]">
@@ -15,9 +15,16 @@ const Project = ({imgs,name}) => {
             </div>
           ))}
         </div>
-        <div>GitHub Website</div>
+        <div className="flex justify-center gap-10">
+          <a href="https://github.com/Jonnaa/Portfolio" target="_blank" className="hover:text-purple-600 visited:text-pink-300 lg:text-lg">
+            GitHub
+          </a>
+          <a href="https://jonnaa.github.io/Portfolio/" target="_blank" className="hover:text-purple-600 visited:text-pink-300 lg:text-lg">
+            Website
+          </a>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
