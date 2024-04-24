@@ -2,7 +2,7 @@ const Project = ({ imgs, name }) => {
   return (
     <>
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
-        <h1 className="w-full flex flex-col justify-center text-center md:text-2xl">
+        <h1 className="w-full flex flex-col justify-center text-center text-lg md:text-2xl">
           {name}
         </h1>
         <div className="snap-x snap-mandatory flex flex-nowrap overflow-x-auto w-full mx-auto max-w-[700px]">
@@ -15,7 +15,7 @@ const Project = ({ imgs, name }) => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center gap-10 md:text-md">
+        <div className="flex justify-center gap-10 text-sm md:text-md">
           <a href="https://github.com/Jonnaa/Portfolio" target="_blank" className="hover:text-purple-600 visited:text-pink-300">
             GitHub
           </a>

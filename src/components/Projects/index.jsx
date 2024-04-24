@@ -81,9 +81,11 @@ const Projects = () => {
 
   // Variable that displays detailed version of whichever project is clicked
   let currentProject = (
-    <h1 className="w-full text-center pt-44 text-4xl animate-pulse">
+    <div className="bg-black">
+    <h1 className="w-full text-center text-2xl md:text-4xl animate-pulse">
       Please click on a project!
     </h1>
+    </div>
   );
 
   if (projDisplay === 1) {
@@ -102,9 +104,9 @@ const Projects = () => {
       {/* Projects page contents */}
       <div className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10">
         {/* Div holds projects - small versions */}
-        <div className="flex flex-wrap justify-center gap-3 w-full mx-auto relative text-center md:text-md">
+        <div className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto relative text-center text-sm md:text-md">
           {/* Project 1 Div */}
-          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -119,7 +121,7 @@ const Projects = () => {
           </div>
 
           {/* Project 2 Div */}
-          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -134,7 +136,7 @@ const Projects = () => {
           </div>
 
           {/* Project 3 Div */}
-          <div className="md:w-1/4 p-[1.5px] bg-purple-400">
+          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
