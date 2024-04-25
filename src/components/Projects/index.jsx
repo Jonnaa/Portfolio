@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+
 import Project from "../Project";
 
 const Projects = () => {
@@ -65,6 +67,14 @@ const Projects = () => {
     },
   ];
 
+  const wholeRef = useRef(null);
+  const { scrollYProgress } = useScroll([
+    {
+      target: wholeRef,
+      offset: ["start end", "end start"],
+    },
+  ]);
+  const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
   const [projDisplay, setProjDisplay] = useState(0);
 
   function switchDisplay(val) {
@@ -102,7 +112,9 @@ const Projects = () => {
         Projects
       </h1>
       {/* Projects page contents */}
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10">
+      <motion.div
+        ref={wholeRef}
+        style={{ opacity }} className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10">
         {/* Div holds projects - small versions */}
         <div className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto relative text-center text-sm md:text-md">
           {/* Project 1 Div */}
@@ -152,7 +164,7 @@ const Projects = () => {
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
         <div className=" p-[1.5px] bg-purple-400 w-full mx-auto">{currentProject}</div>
-      </div>
+      </motion.div>
     </div>
   );
 };
