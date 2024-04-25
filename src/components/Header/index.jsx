@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="fixed w-screen top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+      <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible"></span>
           <nav>
@@ -58,7 +58,7 @@ const Header = () => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="fixed h-[calc(100vh-42px)] mt-12 w-full z-50 overscroll-contain"
+          className="fixed h-[calc(100vh-40px)] sm:h-[calc(100vh-48px)] mt-10 sm:mt-12 w-full z-50 overscroll-contain"
         >
           <div
             ref={scope}
