@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
+      <div className="fixed w-screen top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
         <div className="bg-black flex flex-row justify-between p-px">
           <span className="invisible"></span>
           <nav>
@@ -39,7 +39,7 @@ const Header = () => {
               src="burger-menu.svg"
               alt="Navigation Menu"
               id="burgerButton"
-              className="w-10 rounded  hover:bg-red-500 cursor-pointer z-50 bg-white"
+              className="w-8 sm:w-10 rounded  hover:bg-red-500 cursor-pointer z-50 bg-white"
               onClick={handleOnClick}
             />
           </nav>
@@ -51,7 +51,7 @@ const Header = () => {
           x: "-50%",
           y: "-50%",
         }}
-        className="fixed top-[49px] left-1/2 h-[8px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
+        className="fixed top-[41px] sm:top-[49px] left-1/2 h-[8px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
       />
       {burgerClicked ? (
         <motion.nav

@@ -98,7 +98,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-[calc(100vh)]" id="projects">
-      <h1 className="text-4xl sticky top-1 z-40 w-96 mx-auto text-center">
+      <h1 className="text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40">
         Projects
       </h1>
       {/* Projects page contents */}
