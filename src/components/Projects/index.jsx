@@ -43,7 +43,6 @@ const Projects = () => {
       name: "Merch Index",
     },
   ];
-
   const kitImgs = [
     {
       id: 1,
@@ -67,13 +66,19 @@ const Projects = () => {
     },
   ];
 
+  const h1Ref = useRef(null);
   const wholeRef = useRef(null);
   const { scrollYProgress } = useScroll([
+    {
+      target: h1Ref,
+      offset: ["start end", "end start"],
+    },
     {
       target: wholeRef,
       offset: ["start end", "end start"],
     },
   ]);
+  const h1Opacity = useTransform(scrollYProgress, [0.48, 0.95], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
   const [projDisplay, setProjDisplay] = useState(0);
 
@@ -108,9 +113,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-[calc(100vh)]" id="projects">
-      <h1 className="text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40">
+      <motion.h1
+        ref={h1Ref}
+        style={{ opacity: h1Opacity }} className="text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40">
         Projects
-      </h1>
+      </motion.h1>
       {/* Projects page contents */}
       <motion.div
         ref={wholeRef}
