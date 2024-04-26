@@ -40,8 +40,8 @@ const AboutMe = () => {
     { id: 4, location: "skillsIcons/html.png", name: "HTML" },
     { id: 5, location: "skillsIcons/cssIcon.png", name: "CSS" },
     { id: 6, location: "skillsIcons/tailwind.png", name: "Tailwind" },
-    { id: 7, location: "skillsIcons/nodejs.png", name: "NodeJs" },
-    { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJs" },
+    { id: 7, location: "skillsIcons/nodejs.png", name: "NodeJS" },
+    { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJS" },
     { id: 9, location: "skillsIcons/mdb.svg", name: "MongoDB" },
     { id: 10, location: "skillsIcons/psql.png", name: "ProgreSQL" },
   ];
