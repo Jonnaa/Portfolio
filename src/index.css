@@ -16,3 +16,10 @@
 * {
   scroll-behavior: smooth;
 }
+body{
+  background-image: radial-gradient(
+    circle at center in hsl shorter hue,
+    rgb(80, 0, 80),
+    black
+  );
+}
