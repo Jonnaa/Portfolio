@@ -68,6 +68,8 @@ const Projects = () => {
 
   const h1Ref = useRef(null);
   const wholeRef = useRef(null);
+  const smallProjectRef = useRef(null);
+
   const { scrollYProgress } = useScroll([
     {
       target: h1Ref,
@@ -77,9 +79,15 @@ const Projects = () => {
       target: wholeRef,
       offset: ["start end", "end start"],
     },
+    {
+      target: smallProjectRef,
+      offset: ["start end", "end start"],
+    }
   ]);
   const h1Opacity = useTransform(scrollYProgress, [0.48, 0.95], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
+  const leftProjectX = useTransform(scrollYProgress,[0.65, 0.98],[230,0])
+  const rightProjectX = useTransform(scrollYProgress,[0.65, 0.98],[-230,0])
   const [projDisplay, setProjDisplay] = useState(0);
 
   function switchDisplay(val) {
@@ -123,9 +131,11 @@ const Projects = () => {
         ref={wholeRef}
         style={{ opacity }} className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10">
         {/* Div holds projects - small versions */}
-        <div className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto relative text-center text-sm md:text-md">
+        <div ref={smallProjectRef} className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto relative text-center text-sm md:text-md">
           {/* Project 1 Div */}
-          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
+          <motion.div 
+          style={{ x:leftProjectX }} 
+        className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -137,7 +147,7 @@ const Projects = () => {
                 <img src={tempoImgs[0].location} alt="" />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 2 Div */}
           <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
@@ -155,7 +165,8 @@ const Projects = () => {
           </div>
 
           {/* Project 3 Div */}
-          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
+          <motion.div 
+          style={{ x:rightProjectX }} className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400">
             <div
               className="w-full bg-black cursor-pointer"
               onClick={() => {
@@ -167,7 +178,7 @@ const Projects = () => {
                 <img src={kitImgs[0].location} alt="" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
         <div className=" p-[1.5px] bg-purple-400 w-full mx-auto">{currentProject}</div>
