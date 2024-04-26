@@ -86,8 +86,8 @@ const Projects = () => {
   ]);
   const h1Opacity = useTransform(scrollYProgress, [0.48, 0.95], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
-  const leftProjectX = useTransform(scrollYProgress,[0.65, 0.98],[230,0])
-  const rightProjectX = useTransform(scrollYProgress,[0.65, 0.98],[-230,0])
+  const leftProjectX = useTransform(scrollYProgress,[0.65, 0.9],[230,0])
+  const rightProjectX = useTransform(scrollYProgress,[0.65, 0.9],[-230,0])
   const [projDisplay, setProjDisplay] = useState(0);
 
   function switchDisplay(val) {

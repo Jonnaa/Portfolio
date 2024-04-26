@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { motion, useScroll, useAnimate, stagger } from "framer-motion";
+import { motion, useScroll, useAnimate, stagger, useTransform } from "framer-motion";
 
 const Header = () => {
   const [burgerClicked, setBurgerClicked] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
   const navClasses =
     "navButton flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   const { scrollYProgress } = useScroll();
-
+  const scaleX = useTransform(scrollYProgress, [0, 0.95], [0, 1.1]);
   function handleOnClick() {
     setBurgerClicked(!burgerClicked);
     burgerClicked?enablePageScroll():disablePageScroll()
@@ -47,7 +47,7 @@ const Header = () => {
       </div>
       <motion.div
         style={{
-          scaleX: scrollYProgress,
+          scaleX: scaleX,
           x: "-50%",
           y: "-50%",
         }}
