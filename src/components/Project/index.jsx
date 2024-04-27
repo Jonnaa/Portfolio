@@ -1,4 +1,5 @@
-const Project = ({ imgs, name }) => {
+const Project = ({ info }) => {
+  const {name, gh, web, desc, imgs} = info
   return (
     <>
       <div className="bg-black h-full relative flex flex-col justify-between items-center">
@@ -15,11 +16,12 @@ const Project = ({ imgs, name }) => {
             </div>
           ))}
         </div>
+        <div className="w-1/2">{desc}</div>
         <div className="flex justify-center gap-10 text-sm md:text-md">
-          <a href="https://github.com/Jonnaa/Portfolio" target="_blank" className="hover:text-purple-600 visited:text-pink-300">
+          <a href={gh} target="_blank" className="hover:text-purple-600 visited:text-pink-300">
             GitHub
           </a>
-          <a href="https://jonnaa.github.io/Portfolio/" target="_blank" className="hover:text-purple-600 visited:text-pink-300">
+          <a href={web} target="_blank" className="hover:text-purple-600 visited:text-pink-300">
             Website
           </a>
         </div>
