@@ -80,7 +80,7 @@ const AboutMe = () => {
         </div>
         <div className="w-4/5 max-w-[800px] h-1 rounded-lg mx-auto bg-purple-400"></div>
         <div>
-          <h2 className="text-center text-2xl sm:text-2xl lg:text-3xl underline decoration-purple-400">
+          <h2 className="text-center text-2xl sm:text-2xl lg:text-3xl my-3 sm:mb-3 underline decoration-purple-400">
             Skills
           </h2>
           <div
