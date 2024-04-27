@@ -26,7 +26,12 @@ const Projects = () => {
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
   const leftProjectX = useTransform(scrollYProgress, [0.65, 0.9], [230, 0]);
   const rightProjectX = useTransform(scrollYProgress, [0.65, 0.9], [-230, 0]);
+
   const [projDisplay, setProjDisplay] = useState(0);
+  const [leftIsClicked, setLeftIsClicked]= useState(false)
+  const [centerIsClicked, setCenterIsClicked]= useState(false)
+  const [rightIsClicked, setRightIsClicked]= useState(false)
+
 
   const tempoInfo = {
     name: "Tempo",
@@ -167,12 +172,14 @@ const Projects = () => {
         >
           {/* Project 1 Div */}
           <motion.div
-            style={{ x: leftProjectX }}
+            style={{ x: leftProjectX , filter: leftIsClicked?"blur(5px)":"blur(0px)",opacity:leftIsClicked?.5:1}}
+            whileHover={{filter:leftIsClicked?"blur(.5px)":null, opacity:1}}
             className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
+                setLeftIsClicked(true)
                 switchDisplay(1);
               }}
             >
@@ -184,10 +191,14 @@ const Projects = () => {
           </motion.div>
 
           {/* Project 2 Div */}
-          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg">
+          <motion.div 
+          style={{ filter: centerIsClicked?"blur(5px)":"blur(0px)",opacity:centerIsClicked?.5:1}}
+          whileHover={{filter:centerIsClicked?"blur(.5px)":null, opacity:1}}
+          className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg">
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
+                setCenterIsClicked(true)
                 switchDisplay(2);
               }}
             >
@@ -196,16 +207,18 @@ const Projects = () => {
                 <img src={kdramasInfo.imgs[0].location} alt="" className="rounded-b-md"/>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 3 Div */}
           <motion.div
-            style={{ x: rightProjectX }}
+            style={{ x: rightProjectX , filter: rightIsClicked?"blur(5px)":"blur(0px)",opacity:rightIsClicked?.5:1}}
+            whileHover={{filter:rightIsClicked?"blur(.5px)":null, opacity:1}}
             className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
+                setRightIsClicked(true)
                 switchDisplay(3);
               }}
             >
