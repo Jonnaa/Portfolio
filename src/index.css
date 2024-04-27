@@ -17,9 +17,10 @@
   scroll-behavior: smooth;
 }
 body{
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle at center in hsl shorter hue,
     rgb(80, 0, 80),
     black
-  );
+  ); */
+  background-image: radial-gradient(rgb(80, 0, 80) 0%, rgb(0, 0, 0) 80%);
 }
