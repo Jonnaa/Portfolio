@@ -168,32 +168,32 @@ const Projects = () => {
           {/* Project 1 Div */}
           <motion.div
             style={{ x: leftProjectX }}
-            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded"
+            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
           >
             <div
-              className="w-full bg-black cursor-pointer rounded"
+              className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 switchDisplay(1);
               }}
             >
               <h2>Tempo</h2>
               <div>
-                <img src={tempoInfo.imgs[0].location} alt="" />
+                <img src={tempoInfo.imgs[0].location} alt="" className="rounded-b-md"/>
               </div>
             </div>
           </motion.div>
 
           {/* Project 2 Div */}
-          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded">
+          <div className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg">
             <div
-              className="w-full bg-black cursor-pointer rounded"
+              className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 switchDisplay(2);
               }}
             >
               <h2>KDramas</h2>
               <div>
-                <img src={kdramasInfo.imgs[0].location} alt="" />
+                <img src={kdramasInfo.imgs[0].location} alt="" className="rounded-b-md"/>
               </div>
             </div>
           </div>
@@ -201,23 +201,23 @@ const Projects = () => {
           {/* Project 3 Div */}
           <motion.div
             style={{ x: rightProjectX }}
-            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded"
+            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
           >
             <div
-              className="w-full bg-black cursor-pointer rounded"
+              className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 switchDisplay(3);
               }}
             >
               <h2>KIT</h2>
               <div>
-                <img src={kitInfo.imgs[0].location} alt="" />
+                <img src={kitInfo.imgs[0].location} alt="" className="rounded-b-md"/>
               </div>
             </div>
           </motion.div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
-        <div className="rounded p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 w-full mx-auto">
+        <div className="rounded-lg p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 w-full mx-auto">
           {currentProject}
         </div>
       </motion.div>
