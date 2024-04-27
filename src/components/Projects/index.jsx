@@ -171,7 +171,7 @@ const Projects = () => {
             >
               <h2>Tempo</h2>
               <div>
-                <img src={tempoImgs[0].location} alt="" />
+                <img src={tempoInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </motion.div>
@@ -186,7 +186,7 @@ const Projects = () => {
             >
               <h2>KDramas</h2>
               <div>
-                <img src={kdramasImgs[0].location} alt="" />
+                <img src={kdramasInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ const Projects = () => {
             >
               <h2>KIT</h2>
               <div>
-                <img src={kitImgs[0].location} alt="" />
+                <img src={kitInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </motion.div>
