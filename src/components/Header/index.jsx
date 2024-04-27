@@ -39,7 +39,7 @@ const Header = () => {
               src="burger-menu.svg"
               alt="Navigation Menu"
               id="burgerButton"
-              className="w-8 sm:w-10 rounded  hover:bg-red-500 cursor-pointer z-50 bg-white"
+              className="w-8 sm:w-10 rounded bg-rose-200 shadow-inner shadow-rose-400/50 hover:bg-red-500 cursor-pointer z-50"
               onClick={handleOnClick}
             />
           </nav>
