@@ -15,7 +15,7 @@ const Header = () => {
     {id:3, address: "#projects", name: "Projects"}
   ]
   const navClasses =
-    "navButton flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:bg-slate-700/50 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
+    "navButton flex-auto w-full content-center text-center hover:underline hover:decoration-purple-400 hover:underline-offset-2 hover:border-2 text-3xl hover:border-rose-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500";
   const { scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 0.95], [0, 1.1]);
   function handleOnClick() {
@@ -58,11 +58,12 @@ const Header = () => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="fixed h-[calc(100vh)] sm:h-[calc(100vh-42px)] mt-10 sm:mt-12 w-full z-50 overscroll-contain"
+          className="fixed h-[calc(100vh)] sm:h-[calc(100vh)] pt-2 w-screen z-30 overscroll-contain bg-black/75 backdrop-blur-sm"
         >
+          <div className="fixed h-[calc(100vh)] sm:h-[calc(100vh)] w-full overscroll-contain">
           <div
             ref={scope}
-            className="flex flex-col w-full h-full bg-black/75 backdrop-blur-sm"
+            className="flex flex-col w-full h-full"
           >
             {navLinks.map((link)=>(
               <motion.a
@@ -76,6 +77,7 @@ const Header = () => {
               {link.name}
             </motion.a>
             ))}
+          </div>
           </div>
         </motion.nav>
       ) : (
