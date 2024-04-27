@@ -43,7 +43,7 @@ const AboutMe = () => {
     { id: 7, location: "skillsIcons/nodejs.png", name: "NodeJS" },
     { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJS" },
     { id: 9, location: "skillsIcons/mdb.svg", name: "MongoDB" },
-    { id: 10, location: "skillsIcons/psql.png", name: "ProgreSQL" },
+    { id: 10, location: "skillsIcons/psql.png", name: "PostgreSQL" },
   ];
 
   return (
@@ -97,7 +97,7 @@ const AboutMe = () => {
                   translateX: isInView ? 0 : -50,
                   translateY: isInView ? 0 : -50,
                 }}
-                transition={{ duration: 0.3, delay: i * 0.3 }}
+                transition={{ duration: 0.3, delay: i * 0.25 }}
               >
                 <img
                   src={icon.location}
