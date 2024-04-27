@@ -64,7 +64,7 @@ const AboutMe = () => {
           <p className={pClasses}>
             Hello! I'm Jonathan. I'm a software engineer with an
             educational background in computer science and a hands-on experience
-            at a full-stack bootcamp.
+            at a full stack bootcamp.
             <br />
             <br />
           </p>

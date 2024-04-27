@@ -37,7 +37,7 @@ const Projects = () => {
     name: "Tempo",
     gh: "https://github.com/amerazo/spotify_clone",
     web: "https://tempoproject-1ccff4d917c0.herokuapp.com/home/",
-    desc: "Built with Python, Django, PSQL.Full-stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs.",
+    desc: "Built with Python, Django, PSQL. Full stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs.",
     imgs: [
       { id: 1, location: "tempoScreenshots/Home.jpg", name: "Home" },
       {
@@ -67,7 +67,7 @@ const Projects = () => {
     name: "KDramas",
     gh: "https://github.com/Jonnaa/KDramaWatchList",
     web: "https://kdramas-4e345146c0e4.herokuapp.com/",
-    desc: "Built with Express.JS, MongoDB, Node.JS. Full-stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
+    desc: "Built with JavaScript, Express.JS, MongoDB, Node.JS. Full stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
     imgs: [
       { id: 1, location: "kdramasScreenshots/Home Page.jpg", name: "Home" },
       {
@@ -96,7 +96,7 @@ const Projects = () => {
     name: "KIT",
     gh: "https://github.com/Jonnaa/KIT",
     web: "https://keepintouch-8d0a86903f9e.herokuapp.com/",
-    desc: "Built with MongoDB, Express.JS, React.JS, Node.JS. Full-stack application that allows users to sign up, upload pictures, and comment on pictures.",
+    desc: "Built with JavaScript, MongoDB, Express.JS, React.JS, Node.JS. Full stack application that allows users to sign up, upload pictures, and comment on pictures.",
     imgs: [
       {
         id: 1,
@@ -244,7 +244,7 @@ const Projects = () => {
         </a>
         <a
           href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
-          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold "
+          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold"
           target="_blank"
         >
           Resume
