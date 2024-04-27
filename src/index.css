@@ -22,5 +22,5 @@ body{
     rgb(80, 0, 80),
     black
   ); */
-  background-image: radial-gradient(rgb(80, 0, 80) 0%, rgb(0, 0, 0) 80%);
+  background-image: radial-gradient(rgb(65, 0, 65) 0%, rgb(0, 0, 0) 80%);
 }
