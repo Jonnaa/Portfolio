@@ -143,7 +143,7 @@ const Projects = () => {
       <motion.h1
         ref={h1Ref}
         style={{ opacity: h1Opacity }}
-        className="text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40"
+        className="font-semibold text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40"
       >
         Projects
       </motion.h1>

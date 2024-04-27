@@ -11,7 +11,7 @@ const Home = () => {
   const opacity = useTransform(scrollYProgress, [0,.2],[1,0])
   return (
     <div className="min-h-screen snap-center bg-scroll" id="home">
-      <h1 className="text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40">
+      <h1 className="font-semibold text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-40">
         Home
       </h1>
       <motion.div
