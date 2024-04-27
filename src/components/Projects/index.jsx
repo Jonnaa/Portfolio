@@ -4,7 +4,6 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Project from "../Project";
 
 const Projects = () => {
-
   const h1Ref = useRef(null);
   const wholeRef = useRef(null);
   const smallProjectRef = useRef(null);
@@ -33,8 +32,8 @@ const Projects = () => {
     name: "Tempo",
     gh: "https://github.com/amerazo/spotify_clone",
     web: "https://tempoproject-1ccff4d917c0.herokuapp.com/home/",
-    desc:"Built with Python, Django, PSQL.Full-stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs.",
-    imgs : [
+    desc: "Built with Python, Django, PSQL.Full-stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs.",
+    imgs: [
       { id: 1, location: "tempoScreenshots/Home.jpg", name: "Home" },
       {
         id: 2,
@@ -47,22 +46,30 @@ const Projects = () => {
         name: "Artist Detail",
       },
       { id: 4, location: "tempoScreenshots/Player.jpg", name: "Player" },
-      { id: 5, location: "tempoScreenshots/MerchIndex.jpg", name: "Merch Index" },
+      {
+        id: 5,
+        location: "tempoScreenshots/MerchIndex.jpg",
+        name: "Merch Index",
+      },
       {
         id: 6,
         location: "tempoScreenshots/MerchDetail.jpg",
         name: "Merch Detail",
       },
-    ]
+    ],
   };
   const kdramasInfo = {
     name: "KDramas",
     gh: "https://github.com/Jonnaa/KDramaWatchList",
     web: "https://kdramas-4e345146c0e4.herokuapp.com/",
-    desc:"Built with Express.JS, MongoDB, Node.JS. Full-stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
-    imgs:[
+    desc: "Built with Express.JS, MongoDB, Node.JS. Full-stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
+    imgs: [
       { id: 1, location: "kdramasScreenshots/Home Page.jpg", name: "Home" },
-      { id: 2, location: "kdramasScreenshots/Reviews.jpg", name: "Artist Index" },
+      {
+        id: 2,
+        location: "kdramasScreenshots/Reviews.jpg",
+        name: "Artist Index",
+      },
       {
         id: 3,
         location: "kdramasScreenshots/Review Details.jpg",
@@ -78,14 +85,14 @@ const Projects = () => {
         location: "kdramasScreenshots/Watchlist Page.jpg",
         name: "Merch Index",
       },
-    ]
+    ],
   };
   const kitInfo = {
     name: "KIT",
     gh: "https://github.com/Jonnaa/KIT",
     web: "https://keepintouch-8d0a86903f9e.herokuapp.com/",
-    desc:"Built with MongoDB, Express.JS, React.JS, Node.JS. Full-stack application that allows users to sign up, upload pictures, and comment on pictures.",
-    imgs :[
+    desc: "Built with MongoDB, Express.JS, React.JS, Node.JS. Full-stack application that allows users to sign up, upload pictures, and comment on pictures.",
+    imgs: [
       {
         id: 1,
         location: "kitScreenshots/Landing Page -Logged in.jpg",
@@ -106,7 +113,7 @@ const Projects = () => {
         location: "kitScreenshots/Login.jpg",
         name: "Merch Index",
       },
-    ]
+    ],
   };
 
   function switchDisplay(val) {
@@ -171,7 +178,7 @@ const Projects = () => {
             >
               <h2>Tempo</h2>
               <div>
-                <img src={tempoInfo.imgs[0].location} alt=""/>
+                <img src={tempoInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </motion.div>
@@ -186,7 +193,7 @@ const Projects = () => {
             >
               <h2>KDramas</h2>
               <div>
-                <img src={kdramasInfo.imgs[0].location} alt=""/>
+                <img src={kdramasInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </div>
@@ -204,7 +211,7 @@ const Projects = () => {
             >
               <h2>KIT</h2>
               <div>
-                <img src={kitInfo.imgs[0].location} alt=""/>
+                <img src={kitInfo.imgs[0].location} alt="" />
               </div>
             </div>
           </motion.div>
@@ -214,6 +221,22 @@ const Projects = () => {
           {currentProject}
         </div>
       </motion.div>
+      <div className="flex justify-center gap-24 mt-5">
+        <a
+          href="https://www.linkedin.com/in/jonathannavarroswe/"
+          className="hover:bg-purple-400 bg-rose-200 text-black rounded p-1 sm:p-2 sm:text-lg font-bold"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
+          className="hover:bg-purple-400 bg-rose-200 text-black rounded p-1 sm:p-2 sm:text-lg font-bold"
+          target="_blank"
+        >
+          Resume
+        </a>
+      </div>
     </div>
   );
 };
