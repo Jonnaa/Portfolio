@@ -16,7 +16,7 @@ const Project = ({ info }) => {
             </div>
           ))}
         </div>
-        <div className="w-1/2">{desc}</div>
+        <div className="w-3/4 sm:w-1/2">{desc}</div>
         <div className="flex justify-center gap-10 text-sm md:text-md">
           <a href={gh} target="_blank" className="hover:text-purple-600 visited:text-pink-300">
             GitHub
