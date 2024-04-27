@@ -234,17 +234,17 @@ const Projects = () => {
           {currentProject}
         </div>
       </motion.div>
-      <div className="flex justify-center gap-10 sm:gap-24 mt-5">
+      <div className="flex justify-center gap-10 sm:gap-24 mt-5 text-center">
         <a
           href="https://www.linkedin.com/in/jonathannavarroswe/"
-          className="bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold"
+          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold"
           target="_blank"
         >
           LinkedIn
         </a>
         <a
           href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
-          className=" bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold "
+          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold "
           target="_blank"
         >
           Resume
