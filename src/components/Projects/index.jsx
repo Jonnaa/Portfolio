@@ -69,7 +69,7 @@ const Projects = () => {
     web: "https://kdramas-4e345146c0e4.herokuapp.com/",
     desc: "Built with JavaScript, Express.JS, MongoDB, Node.JS. Full stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
     imgs: [
-      { id: 1, location: "kdramasScreenshots/Home Page.jpg", name: "Home" },
+      { id: 1, location: "kdramasScreenshots/HomePage.jpg", name: "Home" },
       {
         id: 2,
         location: "kdramasScreenshots/Reviews.jpg",
@@ -77,17 +77,17 @@ const Projects = () => {
       },
       {
         id: 3,
-        location: "kdramasScreenshots/Review Details.jpg",
+        location: "kdramasScreenshots/ReviewDetails.jpg",
         name: "Artist Detail",
       },
       {
         id: 4,
-        location: "kdramasScreenshots/Edit Review Page.jpg",
+        location: "kdramasScreenshots/EditReviewPage.jpg",
         name: "Player",
       },
       {
         id: 5,
-        location: "kdramasScreenshots/Watchlist Page.jpg",
+        location: "kdramasScreenshots/WatchlistPage.jpg",
         name: "Merch Index",
       },
     ],
@@ -100,17 +100,17 @@ const Projects = () => {
     imgs: [
       {
         id: 1,
-        location: "kitScreenshots/Landing Page -Logged in.jpg",
+        location: "kitScreenshots/LandingPageLoggedIn.jpg",
         name: "Artist Index",
       },
       {
         id: 2,
-        location: "kitScreenshots/Post Details.jpg",
+        location: "kitScreenshots/PostDetails.jpg",
         name: "Artist Detail",
       },
       {
         id: 3,
-        location: "kitScreenshots/Create Post.jpg",
+        location: "kitScreenshots/CreatePost.jpg",
         name: "Player",
       },
       {
@@ -135,7 +135,7 @@ const Projects = () => {
 
   // Variable that displays detailed version of whichever project is clicked
   let currentProject = (
-    <div className="bg-black">
+    <div className="bg-black rounded-lg">
       <h1 className="w-full text-center text-2xl md:text-4xl animate-pulse">
         Please click on a project!
       </h1>
