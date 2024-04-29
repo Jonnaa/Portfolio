@@ -5,6 +5,10 @@ import { motion, useScroll, useAnimate, stagger, useTransform } from "framer-mot
 const Header = () => {
   const [burgerClicked, setBurgerClicked] = useState(false);
   const [scope, animate] = useAnimate();
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useTransform(scrollYProgress, [0, 0.95], [0, .98]);
+
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -14,11 +18,8 @@ const Header = () => {
     {id:2, address: "#aboutMe", name: "About Me"},
     {id:3, address: "#projects", name: "Projects"}
   ]
-  const navClasses =
-    "navButton flex-auto w-full content-center text-center hover:text-purple-500 hover:border-2 text-3xl hover:border-purple-500 hover:shadow-inner hover:shadow-purple-500";
-  const { scrollYProgress } = useScroll();
-  const scaleX = useTransform(scrollYProgress, [0, 0.95], [0, 1.1]);
-  function handleOnClick() {
+
+  const handleOnClick=()=> {
     setBurgerClicked(!burgerClicked);
     burgerClicked?enablePageScroll():disablePageScroll()
   }
@@ -39,7 +40,7 @@ const Header = () => {
               src="burger-menu.svg"
               alt="Navigation Menu"
               id="burgerButton"
-              className="w-8 sm:w-10 rounded bg-purple-300 shadow-inner shadow-purple-400/50 hover:bg-red-500 cursor-pointer transition-colors z-50"
+              className="w-8 sm:w-10 rounded bg-purple-300 shadow-inner shadow-purple-400/50 hover:bg-purple-500 cursor-pointer transition-colors z-50"
               onClick={handleOnClick}
             />
           </nav>
@@ -51,14 +52,14 @@ const Header = () => {
           x: "-50%",
           y: "-50%",
         }}
-        className="fixed top-[42px] sm:top-[49px] left-1/2 h-[8px] w-screen bg-purple-400 rounded-lg z-50"
+        className="fixed top-[42px] sm:top-[49px] left-1/2 h-[8px] w-screen bg-purple-400 rounded-lg z-20"
       />
       {burgerClicked ? (
         <motion.nav
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="fixed h-[calc(100vh-46px)] sm:h-[calc(100vh-53px)] mt-[46px] sm:mt-[53px] w-screen z-30 overscroll-contain bg-black/75 backdrop-blur-sm"
+          className="fixed h-[calc(100vh-38px)] sm:h-[calc(100vh-46px)] mt-[38px] sm:mt-[46px] w-screen z-30 overscroll-contain bg-black/75 backdrop-blur-sm"
         >
           <div className="fixed h-full w-full overscroll-contain">
           <div
@@ -71,7 +72,7 @@ const Header = () => {
               initial={{ filter: "blur(10px)" }}
               animate={burgerClicked ? handleAnimate : "initial"}
               href={link.address}
-              className={navClasses}
+              className="navButton flex-auto w-full content-center text-center hover:text-purple-300 hover:border-2 text-3xl hover:border-purple-500 hover:shadow-inner hover:shadow-purple-500 hover:underline hover:decoration-purple-500"
               onClick={handleOnClick}
             >
               {link.name}
