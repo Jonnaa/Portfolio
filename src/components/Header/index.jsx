@@ -29,8 +29,8 @@ const Header = () => {
 
   return (
     <div>
-      <div className="fixed w-full top-0 z-40 p-[2.8px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 ">
-        <div className="bg-black flex flex-row justify-between p-px">
+      <div className="fixed w-full top-0 z-20 p-[2.8px] border-2 border-purple-400 bg-black/50 backdrop-blur-sm rounded-lg">
+        <div className=" flex flex-row justify-between p-px">
           <span className="invisible"></span>
           <nav>
             <motion.img
@@ -51,16 +51,16 @@ const Header = () => {
           x: "-50%",
           y: "-50%",
         }}
-        className="fixed top-[41px] sm:top-[49px] left-1/2 h-[8px] w-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 z-50"
+        className="fixed top-[48px] sm:top-[55px] left-1/2 h-[8px] w-screen bg-purple-400 rounded-lg z-50"
       />
       {burgerClicked ? (
         <motion.nav
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="fixed h-[calc(100vh)] sm:h-[calc(100vh)] pt-2 w-screen z-30 overscroll-contain bg-black/75 backdrop-blur-sm"
+          className="fixed h-[calc(100vh-52px)] mt-[52px] w-screen z-30 overscroll-contain bg-black/75 backdrop-blur-sm"
         >
-          <div className="fixed h-[calc(100vh)] sm:h-[calc(100vh)] w-full overscroll-contain">
+          <div className="fixed h-full w-full overscroll-contain">
           <div
             ref={scope}
             className="flex flex-col w-full h-full"
