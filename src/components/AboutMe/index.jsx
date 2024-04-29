@@ -51,7 +51,7 @@ const AboutMe = () => {
       <motion.h1
         ref={h1Ref}
         style={{ opacity: h1Opacity }}
-        className="font-semibold text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-1 z-20"
+        className="font-semibold text-3xl sm:text-4xl w-40 sm:w-56 mx-auto text-center sticky top-0 sm:top-1 z-20"
       >
         About Me
       </motion.h1>
