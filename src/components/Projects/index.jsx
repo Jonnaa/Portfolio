@@ -26,7 +26,8 @@ const Projects = () => {
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
   const leftProjectX = useTransform(scrollYProgress, [0.65, 0.9], [230, 0]);
   const rightProjectX = useTransform(scrollYProgress, [0.65, 0.9], [-230, 0]);
-
+  const [imgIndex, setImgIndex] = useState(0)
+  const [resumeButton, setResumeButton] = useState("R")
   const [projDisplay, setProjDisplay] = useState(0);
   const [leftIsClicked, setLeftIsClicked]= useState(false)
   const [centerIsClicked, setCenterIsClicked]= useState(false)
@@ -143,15 +144,19 @@ const Projects = () => {
   );
 
   if (projDisplay === 1) {
-    currentProject = <Project info={tempoInfo} />;
+    currentProject = <Project info={tempoInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
   } else if (projDisplay === 2) {
-    currentProject = <Project info={kdramasInfo} />;
+    currentProject = <Project info={kdramasInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
   } else if (projDisplay === 3) {
-    currentProject = <Project info={kitInfo} />;
+    currentProject = <Project info={kitInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
+  }
+
+  const showResume=()=>{
+    setResumeButton("Resume")
   }
 
   return (
-    <div className="min-h-[calc(100vh)]" id="projects">
+    <div className="min-h-[calc(100vh)] relative" id="projects">
       <motion.h1
         ref={h1Ref}
         style={{ opacity: h1Opacity }}
@@ -163,23 +168,24 @@ const Projects = () => {
       <motion.div
         ref={wholeRef}
         style={{ opacity }}
-        className="w-11/12 md:w-10/12 lg:w-9/12 lg:max-w-[1000px] min-h-[calc(80vh)] mx-auto relative flex justify-center flex-col pt-10 gap-10 lg:gap-10"
+        className="w-11/12 md:w-11/12 lg:w-10/12 lg:max-w-[850px] xl:max-w-[900px] min-h-[calc(80vh)] mx-auto flex justify-center flex-col pt-1 sm:pt-8 lg:pt-4 xl:pt-7 gap-4 sm:gap-1 lg:gap-3"
       >
         {/* Div holds projects - small versions */}
         <div
           ref={smallProjectRef}
-          className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto relative text-center text-sm md:text-md"
+          className="flex flex-wrap justify-center sm:gap-3 w-full mx-auto text-center text-sm md:text-md"
         >
           {/* Project 1 Div */}
           <motion.div
             style={{ x: leftProjectX , filter: leftIsClicked?"blur(5px)":"blur(0px)",opacity:leftIsClicked?.5:1}}
             whileHover={{filter:leftIsClicked?"blur(.5px)":null, opacity:1}}
-            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
+            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 setLeftIsClicked(true)
+                setImgIndex(0)
                 switchDisplay(1);
               }}
             >
@@ -194,11 +200,12 @@ const Projects = () => {
           <motion.div 
           style={{ filter: centerIsClicked?"blur(5px)":"blur(0px)",opacity:centerIsClicked?.5:1}}
           whileHover={{filter:centerIsClicked?"blur(.5px)":null, opacity:1}}
-          className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg">
+          className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all">
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 setCenterIsClicked(true)
+                setImgIndex(0)
                 switchDisplay(2);
               }}
             >
@@ -213,12 +220,13 @@ const Projects = () => {
           <motion.div
             style={{ x: rightProjectX , filter: rightIsClicked?"blur(5px)":"blur(0px)",opacity:rightIsClicked?.5:1}}
             whileHover={{filter:rightIsClicked?"blur(.5px)":null, opacity:1}}
-            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg"
+            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
                 setRightIsClicked(true)
+                setImgIndex(0)
                 switchDisplay(3);
               }}
             >
@@ -230,26 +238,29 @@ const Projects = () => {
           </motion.div>
         </div>
         {/* Large version of the project selected, starts as a placeholder */}
-        <div className="rounded-lg p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 w-full mx-auto">
+        <div className="rounded-lg p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 w-full mx-auto max-w-[750px]">
           {currentProject}
         </div>
-      </motion.div>
-      <div className="flex justify-center gap-10 sm:gap-24 mt-5 text-center">
+        <div className="absolute bottom-0 left-1/3 md:left-2 md:top-1/2 flex md:flex-col gap-10 sm:gap-24">
         <a
           href="https://www.linkedin.com/in/jonathannavarroswe/"
-          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold"
+          className="w-16 h-16 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 text-sm sm:text-lg font-bold transition-all "
           target="_blank"
         >
-          LinkedIn
+          <img src="icons/linkedInLogo.png" alt="" />
         </a>
-        <a
+        <motion.a
+        onHoverStart={()=>setResumeButton("Resume")}
+        onHoverEnd={()=>setResumeButton("R")}
           href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
-          className="w-20 sm:w-24 bg-rose-200 shadow-md shadow-rose-200/50 hover:shadow-lg hover:bg-purple-400 hover:shadow-purple-400/50 text-black rounded-lg p-1 sm:p-2 text-sm sm:text-lg font-bold"
+          className="w-16 hover:w-32 h-16 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 text-5xl hover:text-3xl font-bold flex justify-center items-center overflow-hidden transition-all"
           target="_blank"
         >
-          Resume
-        </a>
+          {resumeButton}
+        </motion.a>
       </div>
+      </motion.div>
+      
     </div>
   );
 };
