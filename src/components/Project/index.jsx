@@ -66,11 +66,11 @@ const Project = ({ info, imgIndex, setImgIndex }) => {
           </motion.div>
         </div>
         <div className="w-3/4 sm:w-1/2 my-1 text-sm md:text-base ">{desc}</div>
-        <div className="flex justify-center gap-10 text-sm md:text-base mb-1">
-          <a href={gh} target="_blank" className="bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 transition-all">
+        <div className="flex justify-center gap-10 text-sm md:text-base mb-1 text-center">
+          <a href={gh} target="_blank" className="w-16 sm:w-20 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 transition-all">
             GitHub
           </a>
-          <a href={web} target="_blank" className="bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 transition-all">
+          <a href={web} target="_blank" className="w-16 sm:w-20 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 transition-all">
             Website
           </a>
         </div>
