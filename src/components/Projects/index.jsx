@@ -38,7 +38,7 @@ const Projects = () => {
     name: "Tempo",
     gh: "https://github.com/amerazo/spotify_clone",
     web: "https://tempoproject-1ccff4d917c0.herokuapp.com/home/",
-    desc: "Built with Python, Django, PSQL. Full stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs.",
+    desc: "Full stack application that utilizes Spotify's API to display artists, top tracks, and lets users play songs. Built with Python, Django, PSQL.",
     imgs: [
       { id: 1, location: "tempoScreenshots/Home.jpg", name: "Home" },
       {
@@ -68,7 +68,7 @@ const Projects = () => {
     name: "KDramas",
     gh: "https://github.com/Jonnaa/KDramaWatchList",
     web: "https://kdramas-4e345146c0e4.herokuapp.com/",
-    desc: "Built with JavaScript, Express.JS, MongoDB, Node.JS. Full stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist.",
+    desc: "Full stack application that displays K-Dramas with reviews, and allows the user to add K-Dramas to a watchlist. Built with JavaScript, MongoDB, Express.JS, Node.JS.",
     imgs: [
       { id: 1, location: "kdramasScreenshots/HomePage.jpg", name: "Home" },
       {
@@ -97,7 +97,7 @@ const Projects = () => {
     name: "KIT",
     gh: "https://github.com/Jonnaa/KIT",
     web: "https://keepintouch-8d0a86903f9e.herokuapp.com/",
-    desc: "Built with JavaScript, MongoDB, Express.JS, React.JS, Node.JS. Full stack application that allows users to sign up, upload pictures, and comment on pictures.",
+    desc: "Full stack application that allows users to sign up, upload pictures, and comment on pictures. Built with JavaScript, MongoDB, Express.JS, React.JS, Node.JS.",
     imgs: [
       {
         id: 1,
