@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
+import Footer from "../Footer";
 import Project from "../Project";
 
 const Projects = () => {
@@ -22,17 +22,17 @@ const Projects = () => {
       offset: ["start end", "end start"],
     },
   ]);
+
   const h1Opacity = useTransform(scrollYProgress, [0.48, 0.95], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0.65, 0.98], [0, 1]);
   const leftProjectX = useTransform(scrollYProgress, [0.65, 0.9], [230, 0]);
   const rightProjectX = useTransform(scrollYProgress, [0.65, 0.9], [-230, 0]);
-  const [imgIndex, setImgIndex] = useState(0)
-  const [resumeButton, setResumeButton] = useState("R")
-  const [projDisplay, setProjDisplay] = useState(0);
-  const [leftIsClicked, setLeftIsClicked]= useState(false)
-  const [centerIsClicked, setCenterIsClicked]= useState(false)
-  const [rightIsClicked, setRightIsClicked]= useState(false)
 
+  const [imgIndex, setImgIndex] = useState(0);
+  const [projDisplay, setProjDisplay] = useState(0);
+  const [leftIsClicked, setLeftIsClicked] = useState(false);
+  const [centerIsClicked, setCenterIsClicked] = useState(false);
+  const [rightIsClicked, setRightIsClicked] = useState(false);
 
   const tempoInfo = {
     name: "Tempo",
@@ -122,18 +122,6 @@ const Projects = () => {
     ],
   };
 
-  function switchDisplay(val) {
-    if (val === 1) {
-      setProjDisplay(1);
-    } else if (val === 2) {
-      setProjDisplay(2);
-    } else if (val === 3) {
-      setProjDisplay(3);
-    } else {
-      setProjDisplay(0);
-    }
-  }
-
   // Variable that displays detailed version of whichever project is clicked
   let currentProject = (
     <div className="bg-black rounded-lg">
@@ -144,11 +132,21 @@ const Projects = () => {
   );
 
   if (projDisplay === 1) {
-    currentProject = <Project info={tempoInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
+    currentProject = (
+      <Project info={tempoInfo} imgIndex={imgIndex} setImgIndex={setImgIndex} />
+    );
   } else if (projDisplay === 2) {
-    currentProject = <Project info={kdramasInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
+    currentProject = (
+      <Project
+        info={kdramasInfo}
+        imgIndex={imgIndex}
+        setImgIndex={setImgIndex}
+      />
+    );
   } else if (projDisplay === 3) {
-    currentProject = <Project info={kitInfo} imgIndex={imgIndex} setImgIndex={setImgIndex}/>;
+    currentProject = (
+      <Project info={kitInfo} imgIndex={imgIndex} setImgIndex={setImgIndex} />
+    );
   }
 
   return (
@@ -173,62 +171,95 @@ const Projects = () => {
         >
           {/* Project 1 Div */}
           <motion.div
-            style={{ x: leftProjectX , filter: leftIsClicked?"blur(5px)":"blur(0px)",opacity:leftIsClicked?.5:1}}
-            whileHover={{filter:leftIsClicked?"blur(.5px)":null, opacity:1}}
+            style={{
+              x: leftProjectX,
+              filter: leftIsClicked ? "blur(5px)" : "blur(0px)",
+              opacity: leftIsClicked ? 0.5 : 1,
+            }}
+            whileHover={{
+              filter: leftIsClicked ? "blur(.5px)" : null,
+              opacity: 1,
+            }}
             className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
-                setLeftIsClicked(true)
-                setImgIndex(0)
-                switchDisplay(1);
+                setLeftIsClicked(!leftIsClicked);
+                setImgIndex(0);
+                setProjDisplay(1);
               }}
             >
               <h2>Tempo</h2>
               <div>
-                <img src={tempoInfo.imgs[0].location} alt="" className="rounded-b-md"/>
+                <img
+                  src={tempoInfo.imgs[0].location}
+                  alt=""
+                  className="rounded-b-md"
+                />
               </div>
             </div>
           </motion.div>
 
           {/* Project 2 Div */}
-          <motion.div 
-          style={{ filter: centerIsClicked?"blur(5px)":"blur(0px)",opacity:centerIsClicked?.5:1}}
-          whileHover={{filter:centerIsClicked?"blur(.5px)":null, opacity:1}}
-          className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all">
+          <motion.div
+            style={{
+              filter: centerIsClicked ? "blur(5px)" : "blur(0px)",
+              opacity: centerIsClicked ? 0.5 : 1,
+            }}
+            whileHover={{
+              filter: centerIsClicked ? "blur(.5px)" : null,
+              opacity: 1,
+            }}
+            className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all"
+          >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
-                setCenterIsClicked(true)
-                setImgIndex(0)
-                switchDisplay(2);
+                setCenterIsClicked(!centerIsClicked);
+                setImgIndex(0);
+                setProjDisplay(2);
               }}
             >
               <h2>KDramas</h2>
               <div>
-                <img src={kdramasInfo.imgs[0].location} alt="" className="rounded-b-md"/>
+                <img
+                  src={kdramasInfo.imgs[0].location}
+                  alt=""
+                  className="rounded-b-md"
+                />
               </div>
             </div>
           </motion.div>
 
           {/* Project 3 Div */}
           <motion.div
-            style={{ x: rightProjectX , filter: rightIsClicked?"blur(5px)":"blur(0px)",opacity:rightIsClicked?.5:1}}
-            whileHover={{filter:rightIsClicked?"blur(.5px)":null, opacity:1}}
+            style={{
+              x: rightProjectX,
+              filter: rightIsClicked ? "blur(5px)" : "blur(0px)",
+              opacity: rightIsClicked ? 0.5 : 1,
+            }}
+            whileHover={{
+              filter: rightIsClicked ? "blur(.5px)" : null,
+              opacity: 1,
+            }}
             className="w-1/3 sm:w-1/4 p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 hover:shadow-lg hover:shadow-purple-400/75 rounded-lg transition-all"
           >
             <div
               className="w-full bg-black cursor-pointer rounded-lg"
               onClick={() => {
-                setRightIsClicked(true)
-                setImgIndex(0)
-                switchDisplay(3);
+                setRightIsClicked(!rightIsClicked);
+                setImgIndex(0);
+                setProjDisplay(3);
               }}
             >
               <h2>KIT</h2>
               <div>
-                <img src={kitInfo.imgs[0].location} alt="" className="rounded-b-md"/>
+                <img
+                  src={kitInfo.imgs[0].location}
+                  alt=""
+                  className="rounded-b-md"
+                />
               </div>
             </div>
           </motion.div>
@@ -237,26 +268,8 @@ const Projects = () => {
         <div className="rounded-lg p-[1.5px] bg-purple-400 shadow-md shadow-purple-400/50 w-full mx-auto max-w-[750px]">
           {currentProject}
         </div>
-        <div className="absolute bottom-2 left-1/3 md:left-2 md:top-1/2 flex md:flex-col gap-10 sm:gap-24">
-        <a
-          href="https://www.linkedin.com/in/jonathannavarroswe/"
-          className="w-10 h-10 sm:w-16 sm:h-16 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 text-sm sm:text-lg font-bold transition-all "
-          target="_blank"
-        >
-          <img src="icons/linkedInLogo.png" alt="" />
-        </a>
-        <motion.a
-        onHoverStart={()=>setResumeButton("Resume")}
-        onHoverEnd={()=>setResumeButton("R")}
-          href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
-          className="w-10 h-10 sm:w-16 hover:w-24 sm:hover:w-32 sm:h-16 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 text-3xl sm:text-5xl hover:text-xl sm:hover:text-3xl font-bold flex justify-center items-center overflow-hidden transition-all"
-          target="_blank"
-        >
-          {resumeButton}
-        </motion.a>
-      </div>
+        <Footer/>
       </motion.div>
-      
     </div>
   );
 };
