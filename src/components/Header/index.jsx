@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="fixed w-full top-0 z-20 border-2 border-purple-400 bg-black/50 backdrop-blur-sm rounded-lg">
+      <div className="fixed w-full top-0 z-20 border-2 border-purple-400 shadow-sm shadow-purple-400 bg-black/50 backdrop-blur-sm rounded-lg">
         <div className=" flex flex-row justify-between p-px">
           <span className="invisible"></span>
           <nav>
@@ -52,7 +52,7 @@ const Header = () => {
           x: "-50%",
           y: "-50%",
         }}
-        className="fixed top-[42px] sm:top-[49px] left-1/2 h-[8px] w-screen bg-purple-400 rounded-lg z-20"
+        className="fixed top-[41px] sm:top-[49px] left-1/2 h-[6px] w-screen bg-purple-400 rounded-lg z-20 shadow-sm shadow-purple-800"
       />
       {burgerClicked ? (
         <motion.nav
