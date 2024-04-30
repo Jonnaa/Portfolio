@@ -17,6 +17,7 @@ const Footer = () => {
             onHoverStart={() => setResumeButton("Resume")}
             onHoverEnd={() => setResumeButton("R")}
             whileTap={() => setResumeButton("Resume")}
+            href="https://docs.google.com/document/d/10ivZXeMhmoGI26BLo_NN6eRzhNStdY4wbLfrHfhqQtQ/edit?usp=sharing"
             className="w-10 h-10 sm:w-16 hover:w-24 sm:hover:w-32 sm:h-16 bg-purple-300 shadow-md shadow-purple-300/50 hover:shadow-lg hover:bg-purple-500 hover:shadow-purple-500/50 text-black rounded-lg p-1 text-3xl sm:text-5xl hover:text-xl sm:hover:text-2xl font-bold overflow-hidden transition-all"
             target="_blank"
           >
