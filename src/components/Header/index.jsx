@@ -7,7 +7,7 @@ const Header = () => {
   const [scope, animate] = useAnimate();
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useTransform(scrollYProgress, [0, 0.95], [0, .98]);
+  const scaleX = useTransform(scrollYProgress, [0, 0.96], [0, .99]);
 
   const variants = {
     visible: { opacity: 1 },
