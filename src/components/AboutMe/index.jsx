@@ -3,8 +3,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AboutMe = () => {
-  const pClasses = "w-4/5 sm:w-3/4 max-w-[500px] mx-auto text-base md:text-lg md:w-3/5 ";
-  const iconClasses = "basis-1/5 sm:basis-1/5 flex flex-col justify-between text-base max-w-[75px] sm:max-w-[95px]";
+  const pClasses = "w-4/5 sm:w-3/4 max-w-[500px] mx-auto text-base md:text-lg md:w-3/5";
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -44,6 +43,7 @@ const AboutMe = () => {
     { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJS" },
     { id: 9, location: "skillsIcons/mdb.svg", name: "MongoDB" },
     { id: 10, location: "skillsIcons/psql.png", name: "PostgreSQL" },
+    { id: 10, location: "skillsIcons/framer-motion-logo.png", name: "FramerMotion" },
   ];
 
   return (
@@ -58,7 +58,7 @@ const AboutMe = () => {
       <motion.div
         ref={wholeRef}
         style={{ opacity }}
-        className="min-h-[calc(80vh)] mt-8 sm:mt-10 flex flex-col justify-center gap-3 sm:gap-10 tracking-wide"
+        className="min-h-[calc(80vh)] mt-8 sm:mt-10 flex flex-col justify-center gap-3 sm:gap-6 tracking-wide"
       >
         <div>
           <p className={pClasses}>
@@ -80,17 +80,17 @@ const AboutMe = () => {
         </div>
         <div className="w-4/5 max-w-[800px] h-1 rounded-lg mx-auto bg-purple-400"></div>
         <div>
-          <h2 className="text-center text-2xl sm:text-2xl lg:text-3xl my-3 sm:mb-3 underline decoration-purple-400">
+          <h2 className="text-center text-2xl sm:text-2xl lg:text-3xl sm:mb-4 underline decoration-purple-400">
             Skills
           </h2>
           <div
             ref={ref}
-            className="w-10/12 sm:w-3/4 max-w-[550px] mx-auto text-center flex flex-wrap justify-center gap-x-4 sm:gap-x-0 gap-y-4 sm:gap-y-10"
+            className="w-11/12 sm:w-3/4 max-w-[550px] mx-auto text-center flex flex-wrap justify-center gap-x-4 sm:gap-x-0 gap-y-1 sm:gap-y-5"
           >
             {icons.map((icon, i) => (
               <motion.div
                 key={icon.id}
-                className={iconClasses}
+                className="basis-1/4 sm:basis-1/4 flex flex-col justify-between text-sm sm:text-base max-w-[100px] sm:max-w-[120px] p-1"
                 initial={{ opacity: 0, translateX: -50, translateY: -50 }}
                 animate={{
                   opacity: isInView ? 1 : 0,
@@ -102,7 +102,7 @@ const AboutMe = () => {
                 <img
                   src={icon.location}
                   alt={icon.name + " icon"}
-                  className="w-1/2 sm:w-4/5 m-auto"
+                  className="w-1/2 sm:max-w-[70%] max-h-[80px] m-auto"
                   title={icon.name}
                 />
                 <p>{icon.name}</p>
