@@ -3,7 +3,8 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AboutMe = () => {
-  const pClasses = "w-4/5 sm:w-3/4 max-w-[500px] mx-auto text-base md:text-lg md:w-3/5";
+  const pClasses =
+    "w-4/5 sm:w-3/4 max-w-[500px] mx-auto text-base md:text-lg md:w-3/5";
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -43,7 +44,11 @@ const AboutMe = () => {
     { id: 8, location: "skillsIcons/ejs.png", name: "ExpressJS" },
     { id: 9, location: "skillsIcons/mdb.svg", name: "MongoDB" },
     { id: 10, location: "skillsIcons/psql.png", name: "PostgreSQL" },
-    { id: 10, location: "skillsIcons/framer-motion-logo.png", name: "FramerMotion" },
+    {
+      id: 10,
+      location: "skillsIcons/framer-motion-logo.png",
+      name: "FramerMotion",
+    },
   ];
 
   return (
@@ -62,14 +67,14 @@ const AboutMe = () => {
       >
         <div>
           <p className={pClasses}>
-            Hello! I'm Jonathan. I'm a software engineer with an
-            educational background in computer science and a hands-on experience
-            at a full stack bootcamp.
+            Hello! I'm Jonathan. I'm a software developer with an educational
+            background in computer science and a hands-on experience at a
+            full-stack bootcamp.
             <br />
             <br />
           </p>
           <p className={pClasses}>
-            I'm fully capable and ready to be your software engineer.
+            I'm fully capable and ready to be your software developer.
             <br />
             <br />
           </p>
